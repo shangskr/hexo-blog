@@ -1,0 +1,13 @@
+:root {
+    --card-bg: #b0e0e6;
+}
+[data-theme='dark']{
+    --card-bg: #191970;
+}
+.aside-content .card-info{
+    background:url("/img/background.png")!important;
+    background-size: 100% 100%!important;
+}
+[data-theme='dark'] .aside-content .card-info{
+    background: linear-gradient(rgba(25,25,112,0.5), rgba(25,25,112, 0.5)), url('/img/background.png') no-repeat 100% 100%/ 100% 100%!important
+}
