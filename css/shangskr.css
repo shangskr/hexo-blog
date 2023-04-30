@@ -1,6 +1,7 @@
 :root {
     --card-bg: #b0e0e6;
     --sidebar-bg:cadetblue;
+    --anzhiyu-background:var(--card-bg);
 }
 [data-theme='dark']{
     --card-bg: #191970;

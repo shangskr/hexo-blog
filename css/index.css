@@ -5959,7 +5959,7 @@ blockquote.pullquote.right {
   flex-direction: column;
   justify-content: center;
   color: var(--anzhiyu-white);
-  background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
+  background: linear-gradient(120deg, #ffca27 0, #00d4ff 100%);
   background-size: 200%;
   animation: gradient 15s ease infinite;
   width: 59%;
@@ -6757,6 +6757,15 @@ blockquote.pullquote.right {
   font-size: 12px;
   color: var(--anzhiyu-secondtext);
   white-space: nowrap;
+}
+.center-logo-large{
+  font-size: 30px;
+}
+.center-logo-small{
+  font-size: 15px;
+}
+.center-logo-small,.center-logo-large{
+  text-align: center;
 }
 .author-content-item.careers {
   min-height: 400px;
