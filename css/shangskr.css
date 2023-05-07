@@ -2,6 +2,7 @@
     --card-bg: #b0e0e6;
     --sidebar-bg:cadetblue;
     --anzhiyu-background:var(--card-bg);
+    --HiPeach-background:var(--anzhiyu-background);
 }
 [data-theme='dark']{
     --card-bg: #191970;
@@ -274,4 +275,8 @@ h6::before {
 /*图片圆角*/
 #article-container img {
   border-radius: 15px;
+}
+/*Waline表情自适应*/
+.wl-emoji-popup{
+    width: 100%;
 }
