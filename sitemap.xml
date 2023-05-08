@@ -149,14 +149,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
-    <lastmod>2023-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/Windows/</loc>
+    <loc>https://hexo.shangskr.top/tags/github/</loc>
     <lastmod>2023-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -164,13 +157,6 @@
   
   <url>
     <loc>https://hexo.shangskr.top/tags/freenom/</loc>
-    <lastmod>2023-05-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/github/</loc>
     <lastmod>2023-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -192,6 +178,20 @@
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E5%85%8D%E8%B4%B9UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2023-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
+    <lastmod>2023-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/tags/Windows/</loc>
     <lastmod>2023-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
