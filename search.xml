@@ -38,9 +38,11 @@ net start termservice</code></p>
 <h2 id="自动生成配置信息"><a href="#自动生成配置信息" class="headerlink" title="自动生成配置信息"></a>自动生成配置信息</h2><p><img src="https://b2.shangskr.top/RDP%E7%A0%B4%E8%A7%A3win%E5%A4%9A%E7%94%A8%E6%88%B7%E8%BF%9E%E6%8E%A5/12.png" alt=""></p>
 <h2 id="重启服务，启动RDPConf-exe"><a href="#重启服务，启动RDPConf-exe" class="headerlink" title="重启服务，启动RDPConf.exe"></a>重启服务，启动RDPConf.exe</h2><p><img src="https://b2.shangskr.top/RDP%E7%A0%B4%E8%A7%A3win%E5%A4%9A%E7%94%A8%E6%88%B7%E8%BF%9E%E6%8E%A5/13.png" alt=""></p>
 <h2 id="以上两种方法用来解决“not-supported”"><a href="#以上两种方法用来解决“not-supported”" class="headerlink" title="以上两种方法用来解决“not supported”"></a>以上两种方法用来解决“not supported”</h2><h2 id="当运行RDPConf-exe看到的是“fully-supported”，就破解成功了。可以实现多用户登入一台电脑。"><a href="#当运行RDPConf-exe看到的是“fully-supported”，就破解成功了。可以实现多用户登入一台电脑。" class="headerlink" title="当运行RDPConf.exe看到的是“fully supported”，就破解成功了。可以实现多用户登入一台电脑。"></a>当运行RDPConf.exe看到的是“fully supported”，就破解成功了。可以实现多用户登入一台电脑。</h2><h2 id="多用户登入一台电脑，如果需要限制硬盘（文件）的使用权限请另外对用户进行设置！"><a href="#多用户登入一台电脑，如果需要限制硬盘（文件）的使用权限请另外对用户进行设置！" class="headerlink" title="多用户登入一台电脑，如果需要限制硬盘（文件）的使用权限请另外对用户进行设置！"></a>多用户登入一台电脑，如果需要限制硬盘（文件）的使用权限请另外对用户进行设置！</h2><h2 id="今天就到这里了，拜拜咯。"><a href="#今天就到这里了，拜拜咯。" class="headerlink" title="今天就到这里了，拜拜咯。"></a>今天就到这里了，拜拜咯。</h2>]]></content>
+      <categories>
+        <category>windwos</category>
+      </categories>
       <tags>
         <tag>RDPWrap</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>

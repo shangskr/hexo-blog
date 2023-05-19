@@ -6091,7 +6091,7 @@ blockquote.pullquote.right {
   flex-direction: column;
   justify-content: center;
   color: var(--anzhiyu-white);
-  background: linear-gradient(120deg, #ffca27 0, #00d4ff 100%);
+  background: linear-gradient(120deg, #27ffc7 0, #00efff 100%);
   background-size: 200%;
   animation: gradient 15s ease infinite;
   width: 59%;
@@ -6100,7 +6100,7 @@ blockquote.pullquote.right {
 .author-content-item {
   width: 49%;
   border-radius: 24px;
-  background: var(--anzhiyu-card-bg);
+  background: #49dde7;
   border: var(--style-border-always);
   box-shadow: var(--anzhiyu-shadow-border);
   position: relative;
@@ -6135,6 +6135,7 @@ blockquote.pullquote.right {
   align-items: flex-start;
   flex-direction: column;
   width: 39%;
+
 }
 
 .aboutsiteTips h2 {
@@ -6892,9 +6893,11 @@ blockquote.pullquote.right {
 }
 .center-logo-large{
   font-size: 30px;
+  margin: -10px;
 }
 .center-logo-small{
   font-size: 15px;
+  margin: 0;
 }
 .center-logo-small,.center-logo-large{
   text-align: center;

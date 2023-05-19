@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.shangskr.top/posts/6.html</loc>
+    
+    <lastmod>2023-05-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hexo.shangskr.top/about/index.html</loc>
     
     <lastmod>2023-04-30</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://hexo.shangskr.top/posts/7.html</loc>
-    
-    <lastmod>2023-04-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/posts/6.html</loc>
     
     <lastmod>2023-04-01</lastmod>
     
@@ -121,7 +121,7 @@
 
   <url>
     <loc>https://hexo.shangskr.top/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,74 +129,74 @@
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E5%AE%89%E5%8D%93/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/DUAL/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2023-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
-    <lastmod>2023-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/Windows/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/freenom/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/github/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/waline/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E5%85%8D%E8%B4%B9UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2023-05-09</lastmod>
+    <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
 
+  
+  <url>
+    <loc>https://hexo.shangskr.top/categories/windwos/</loc>
+    <lastmod>2023-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
