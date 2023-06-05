@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>用backblaze+cloudflare搭建免费图床</title>
-    <url>/posts/8.html</url>
-    <content><![CDATA[<h2 id="首先准备一个域名，一个邮箱"><a href="#首先准备一个域名，一个邮箱" class="headerlink" title="首先准备一个域名，一个邮箱"></a>首先准备一个域名，一个邮箱</h2><p>~backbalze的服务器在国外，所以打开会慢emmmm，那么就科学上网（当然不科学上网也可以打开的，那你就看运气吧！）<br>1.在<a href="https://www.cloudflare.com/" title="cloudflare">cloudflare</a>注册并将你的域名加入。（如果不会的话可以看看我以前的文章有说明哦~）<br>2.在<a href="https://www.backblaze.com/b2/cloud-storage.html" title="backblaze">backblaze</a>注册一个账号，并新建一个bucket，记得Files in Bucket are:这里选public就好，就是公开桶。（不然别人无法看到你的图片）避坑：backblaze都是公开的所以大部分不要填写自己的真实信息！！！其实也没什么。<br><img src="https://b2.shangskr.top/B2%2BCF/01.png" alt=""></p>
-<h2 id="打开backblaze开始配置"><a href="#打开backblaze开始配置" class="headerlink" title="打开backblaze开始配置"></a>打开backblaze开始配置</h2><p>1.这里我用cloudflare演示，首先随便上传一个照片，注意要用到下图的这个友好链接的哦~<br><img src="https://b2.shangskr.top/B2%2BCF/02.png" alt=""><br>2.打开cloudflare控制页面，找到dns记录 设置如下图填写添加一个记录<br><img src="https://b2.shangskr.top/B2%2BCF/04.png" alt=""><br>这一步好了以后基本可以用了<br>现在将backblaze链接里面的域名<a href="https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png">https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png</a><br>改为<a href="https://b2.shangskr.top/file/tuchuang123/B2%2BCF/03.png(这样，就可以用过cloudflare来访问了">https://b2.shangskr.top/file/tuchuang123/B2%2BCF/03.png(这样，就可以用过cloudflare来访问了</a>)<br><div class="note warning flat"><p>图床链接最好用backblaze提供的友好链接，然后需要手动换成自己设置的链接，这样就可以了。（如果还是用原来的，岂不是什么也没做）</p>
-</div><br>3.这样基本完成，但是backblaze每天有一定的访问次数限制，这样的话我们利用cloudflare的超强缓存就可以做到无限回流了（无限白嫖哦~亲测有效）<br>打开cloudfalre缓存时间设置。这里可以在cloudflare设置也可以在backblaze设置，当然我都设置了的（吸吸）<br><img src="https://b2.shangskr.top/B2%2BCF/05.png" alt=""><br>接下来在cloudflare设置一个转换规则(因为图床的链接还是不够简化，用这个转换规则就可以使它更简洁了呢)如图：<br><img src="https://b2.shangskr.top/B2%2BCF/06.png" alt=""><br><img src="https://b2.shangskr.top/B2%2BCF/07.png" alt=""><br>concat(“/file/tuchuang123”,http.request.uri.path) 这里的/file/后面改成你自己的桶名<br>这样子原链接<a href="https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png">https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png</a><br>就可以通过<a href="https://b2.shangskr.top/B2%2BCF/03.png来访问了">https://b2.shangskr.top/B2%2BCF/03.png来访问了</a><br>4.在backblaze中设置缓存周期<br><img src="https://b2.shangskr.top/B2%2BCF/08.png" alt=""><br><img src="https://b2.shangskr.top/B2%2BCF/09.png" alt=""><br>好了完美了</p>
-<h2 id="光用网页上传也不是个办法啊，那么就用这个"><a href="#光用网页上传也不是个办法啊，那么就用这个" class="headerlink" title="光用网页上传也不是个办法啊，那么就用这个"></a>光用网页上传也不是个办法啊，那么就用这个</h2><p>1.点击App keys,添加一个新的key,bucket就选你刚创建的那个,记录下你的密钥,之后要在ShareX中用！！！<br><img src="https://b2.shangskr.top/B2%2BCF/03.png" alt=""><br>2.大概就这样了emmmm，累跌<br>配置ShareX.<br><img src="https://b2.shangskr.top/B2%2BCF/10.png" alt="图片来自https://www.liuzhanwu.com/17373.html" title="图片来自https://www.liuzhanwu.com/17373.html"><br>emmm困死我了，不行了开始偷图片了，不想弄了。<br>差不多这里也就好了，配置好就好了<br>3.扩展工具（来自<a href="https://blog.csdn.net/weixin_43511521/article/details/128438259" title="csdn">csdn</a>）<br>假如你是用的typecho，还可以使用上传插件实现自动上传，无需登录backblaze：<br>typecho - b2file 插件地址：<a href="https://github.com/qq80284445/Typecho-B2File">https://github.com/qq80284445/Typecho-B2File</a><br>另：backblaze支持s3 ，所以你用Picgo等软件上传的话，只需要添加个s3插件就可以了.<br><div class="note primary flat"><p>睡觉觉困死了2023-05-20 22:52:51 星期六</p>
-</div></p>
-]]></content>
-      <categories>
-        <category>图床</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-        <tag>cloudflare</tag>
-        <tag>backblaze</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DUAL同屏小游戏</title>
     <url>/posts/7.html</url>
     <content><![CDATA[<h2 id="DUAL——（一款需要有面对面朋友才能玩的小游戏）—最后有下载地址"><a href="#DUAL——（一款需要有面对面朋友才能玩的小游戏）—最后有下载地址" class="headerlink" title="DUAL——（一款需要有面对面朋友才能玩的小游戏）—最后有下载地址"></a>DUAL——（一款需要有面对面朋友才能玩的小游戏）—最后有下载地址</h2><h2 id="详细信息："><a href="#详细信息：" class="headerlink" title="详细信息："></a>详细信息：</h2><h3 id="DUAL游戏，这个游戏比较合适情侣玩，因为这是一款双人联网手游。玩法简便，小伙伴们只需要学会操纵飞机的飞行方向与速度就能够了。并且，这个DUAL游戏上的关卡全是精心准备的，玩家们不断闯关升级自己的武器，还能够丰富自己的业余生活哦。"><a href="#DUAL游戏，这个游戏比较合适情侣玩，因为这是一款双人联网手游。玩法简便，小伙伴们只需要学会操纵飞机的飞行方向与速度就能够了。并且，这个DUAL游戏上的关卡全是精心准备的，玩家们不断闯关升级自己的武器，还能够丰富自己的业余生活哦。" class="headerlink" title="DUAL游戏，这个游戏比较合适情侣玩，因为这是一款双人联网手游。玩法简便，小伙伴们只需要学会操纵飞机的飞行方向与速度就能够了。并且，这个DUAL游戏上的关卡全是精心准备的，玩家们不断闯关升级自己的武器，还能够丰富自己的业余生活哦。"></a>DUAL游戏，这个游戏比较合适情侣玩，因为这是一款双人联网手游。玩法简便，小伙伴们只需要学会操纵飞机的飞行方向与速度就能够了。并且，这个DUAL游戏上的关卡全是精心准备的，玩家们不断闯关升级自己的武器，还能够丰富自己的业余生活哦。</h3><h2 id="官网图片展示："><a href="#官网图片展示：" class="headerlink" title="官网图片展示："></a>官网图片展示：</h2><p><img src="https://b2.shangskr.top/DUAL%E5%90%8C%E5%B1%8F/1.png" alt=""><br><img src="https://b2.shangskr.top/DUAL%E5%90%8C%E5%B1%8F/2.png" alt=""><br><img src="https://b2.shangskr.top/DUAL%E5%90%8C%E5%B1%8F/3.png" alt=""></p>
@@ -68,23 +50,27 @@ net start termservice</code></p>
       </tags>
   </entry>
   <entry>
-    <title>申请免费UNIX服务器</title>
-    <url>/posts/5.html</url>
-    <content><![CDATA[<p>Unix是20世纪70年代初出现的一个操作系统，除了作为网络操作系统之外，还可以作为单机操作系统使用。Unix作为一种开发平台和台式操作系统获得了广泛使用，主要用于工程应用和科学计算等领域。</p>
-<h1 id="发展历史："><a href="#发展历史：" class="headerlink" title="发展历史："></a>发展历史：</h1><h2 id="1-UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth-Thompson和Dennis-Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K-Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。"><a href="#1-UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth-Thompson和Dennis-Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K-Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。" class="headerlink" title="1.UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth Thompson和Dennis Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K.Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。"></a>1.UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth Thompson和Dennis Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K.Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。</h2><h2 id="2-1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX-VersionV。1974年，Kenneth-Thompson和Dennis-Ritchie合写的“The-UNIX-Time-Sharing-System”在Communication-of-ACM上发表，正式向外界披露了UNIX系统。"><a href="#2-1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX-VersionV。1974年，Kenneth-Thompson和Dennis-Ritchie合写的“The-UNIX-Time-Sharing-System”在Communication-of-ACM上发表，正式向外界披露了UNIX系统。" class="headerlink" title="2.1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX VersionV。1974年，Kenneth Thompson和Dennis Ritchie合写的“The UNIX Time-Sharing System”在Communication of ACM上发表，正式向外界披露了UNIX系统。"></a>2.1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX VersionV。1974年，Kenneth Thompson和Dennis Ritchie合写的“The UNIX Time-Sharing System”在Communication of ACM上发表，正式向外界披露了UNIX系统。</h2><h2 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h2><h2 id="1-首先去网站注册（这里有两个网站都可以用）"><a href="#1-首先去网站注册（这里有两个网站都可以用）" class="headerlink" title="1.首先去网站注册（这里有两个网站都可以用）"></a>1.首先去网站注册（这里有两个网站都可以用）</h2><p>（1）<a href="http://sdf.org/">http://sdf.org/</a><br>（2）<a href="http://freeshell.org/">http://freeshell.org/</a></p>
-<h2 id="打开网站按下图填写的注册"><a href="#打开网站按下图填写的注册" class="headerlink" title="打开网站按下图填写的注册"></a>打开网站按下图填写的注册</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/1.png" alt=""></p>
-<h3 id="2-注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看"><a href="#2-注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看" class="headerlink" title="2.注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看"></a>2.注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看</h3><h2 id="3-然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。"><a href="#3-然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。" class="headerlink" title="3.然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。"></a>3.然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/2.png" alt=""></p>
-<h2 id="创建一个新主机"><a href="#创建一个新主机" class="headerlink" title="创建一个新主机"></a>创建一个新主机</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/3.png" alt=""></p>
-<h2 id="4-然后根据邮件的内容填写账号密码等等…"><a href="#4-然后根据邮件的内容填写账号密码等等…" class="headerlink" title="4.然后根据邮件的内容填写账号密码等等…"></a>4.然后根据邮件的内容填写账号密码等等…</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/4.png" alt=""></p>
-<h2 id="填写好后保存"><a href="#填写好后保存" class="headerlink" title="填写好后保存"></a>填写好后保存</h2><h2 id="然后双击打开…等待连接"><a href="#然后双击打开…等待连接" class="headerlink" title="然后双击打开…等待连接"></a>然后双击打开…等待连接</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/5.png" alt=""></p>
-<h2 id="5-连接成功以后会让你输入key，这里直接跳过（按空格键跳过）"><a href="#5-连接成功以后会让你输入key，这里直接跳过（按空格键跳过）" class="headerlink" title="5.连接成功以后会让你输入key，这里直接跳过（按空格键跳过）"></a>5.连接成功以后会让你输入key，这里直接跳过（按空格键跳过）</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/6.png" alt=""></p>
-<h2 id="6-然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。"><a href="#6-然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。" class="headerlink" title="6.然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。"></a>6.然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。</h2><h4 id="最后附上效果图："><a href="#最后附上效果图：" class="headerlink" title="最后附上效果图："></a>最后附上效果图：</h4><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/7.png" alt=""></p>
-<h2 id="没用的知识又增加了！！！"><a href="#没用的知识又增加了！！！" class="headerlink" title="没用的知识又增加了！！！"></a>没用的知识又增加了！！！</h2>]]></content>
+    <title>将freenom的域名托管到cloudflare上</title>
+    <url>/posts/1.html</url>
+    <content><![CDATA[<h2 id="2022-12-09-08-24-34-星期五"><a href="#2022-12-09-08-24-34-星期五" class="headerlink" title="2022-12-09 08:24:34 星期五"></a>2022-12-09 08:24:34 星期五</h2><p>用cloudflare搭建网站，无需服务器，仅需要一个域名即可食用。</p>
+<h2 id="首先你需要申请一个域名或购买，这里我以freenom为例。"><a href="#首先你需要申请一个域名或购买，这里我以freenom为例。" class="headerlink" title="首先你需要申请一个域名或购买，这里我以freenom为例。"></a>首先你需要申请一个域名或购买，这里我以freenom为例。</h2><p><img src="https://b2.shangskr.top/1.png" alt=""></p>
+<h2 id="然后打开cf根据下图："><a href="#然后打开cf根据下图：" class="headerlink" title="然后打开cf根据下图："></a>然后打开cf根据下图：</h2><p><img src="https://b2.shangskr.top/2.png" alt=""></p>
+<h2 id="将域名添加进去"><a href="#将域名添加进去" class="headerlink" title="将域名添加进去"></a>将域名添加进去</h2><p><img src="https://b2.shangskr.top/3.png" alt=""></p>
+<h2 id="当然这里你可以选择付费，白嫖的也不错，果断选择0元。"><a href="#当然这里你可以选择付费，白嫖的也不错，果断选择0元。" class="headerlink" title="当然这里你可以选择付费，白嫖的也不错，果断选择0元。"></a>当然这里你可以选择付费，白嫖的也不错，果断选择0元。</h2><p><img src="https://b2.shangskr.top/4.png" alt=""></p>
+<h2 id="根据图示：继续"><a href="#根据图示：继续" class="headerlink" title="根据图示：继续"></a>根据图示：继续</h2><p><img src="https://b2.shangskr.top/5.png" alt=""><br><img src="https://b2.shangskr.top/6.png" alt=""></p>
+<h2 id="继续点击完成并检测："><a href="#继续点击完成并检测：" class="headerlink" title="继续点击完成并检测："></a>继续点击完成并检测：</h2><p><img src="https://b2.shangskr.top/7.png" alt=""></p>
+<h2 id="下面这几步直接照做就可以："><a href="#下面这几步直接照做就可以：" class="headerlink" title="下面这几步直接照做就可以："></a>下面这几步直接照做就可以：</h2><p><img src="https://b2.shangskr.top/8.png" alt=""><br><img src="https://b2.shangskr.top/9.png" alt=""><br><img src="https://b2.shangskr.top/10.png" alt=""><br><img src="https://b2.shangskr.top/11.png" alt=""><br><img src="https://b2.shangskr.top/12.png" alt=""></p>
+<h2 id="上述步骤完成后讲自动跳转到这里："><a href="#上述步骤完成后讲自动跳转到这里：" class="headerlink" title="上述步骤完成后讲自动跳转到这里："></a>上述步骤完成后讲自动跳转到这里：</h2><p><img src="https://b2.shangskr.top/13.png" alt=""></p>
+<h2 id="然后打开freenom我的域名，管理域名页面如下图："><a href="#然后打开freenom我的域名，管理域名页面如下图：" class="headerlink" title="然后打开freenom我的域名，管理域名页面如下图："></a>然后打开freenom我的域名，管理域名页面如下图：</h2><p><img src="https://b2.shangskr.top/14.png" alt=""></p>
+<h2 id="然后将cf提供的两个名称复制进去："><a href="#然后将cf提供的两个名称复制进去：" class="headerlink" title="然后将cf提供的两个名称复制进去："></a>然后将cf提供的两个名称复制进去：</h2><p><img src="https://b2.shangskr.top/15.png" alt=""></p>
+<h2 id="完成后会有下图提示："><a href="#完成后会有下图提示：" class="headerlink" title="完成后会有下图提示："></a>完成后会有下图提示：</h2><p><img src="https://b2.shangskr.top/16.png" alt=""></p>
+<h2 id="最后回到cf等待即可（通常5分钟之内就完成）："><a href="#最后回到cf等待即可（通常5分钟之内就完成）：" class="headerlink" title="最后回到cf等待即可（通常5分钟之内就完成）："></a>最后回到cf等待即可（通常5分钟之内就完成）：</h2><p><img src="https://b2.shangskr.top/17.png" alt=""></p>
+<h1 id="关于托管域名到cf就这些了。"><a href="#关于托管域名到cf就这些了。" class="headerlink" title="关于托管域名到cf就这些了。"></a>关于托管域名到cf就这些了。</h1>]]></content>
       <categories>
-        <category>其它</category>
+        <category>freenom</category>
       </categories>
       <tags>
-        <tag>免费UNIX服务器</tag>
+        <tag>freenom</tag>
       </tags>
   </entry>
   <entry>
@@ -102,26 +88,6 @@ net start termservice</code></p>
       </categories>
       <tags>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免魔法注册freenom域名的插件和规则导入</title>
-    <url>/posts/3.html</url>
-    <content><![CDATA[<h1 id="免魔法注册freenom域名的插件安装"><a href="#免魔法注册freenom域名的插件安装" class="headerlink" title="免魔法注册freenom域名的插件安装"></a>免魔法注册freenom域名的插件安装</h1><h2 id="1-下面的官网"><a href="#1-下面的官网" class="headerlink" title="1.下面的官网"></a>1.下面的官网</h2><p><a href="https://he.firefoxcn.net/" title="Header Editor">Header Editor</a><br><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/1.png" alt=""></p>
-<h2 id="2-点击开始使用"><a href="#2-点击开始使用" class="headerlink" title="2.点击开始使用"></a>2.点击开始使用</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/2.png" alt=""></p>
-<h2 id="3-你没有前3个浏览器可以点击自分发版本跳转到github"><a href="#3-你没有前3个浏览器可以点击自分发版本跳转到github" class="headerlink" title="3.你没有前3个浏览器可以点击自分发版本跳转到github"></a>3.你没有前3个浏览器可以点击自分发版本跳转到github</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/3.png" alt=""></p>
-<h2 id="4-根据你的版本下载你需要的插件源码"><a href="#4-根据你的版本下载你需要的插件源码" class="headerlink" title="4.根据你的版本下载你需要的插件源码"></a>4.根据你的版本下载你需要的插件源码</h2><h2 id="5-打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件"><a href="#5-打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件" class="headerlink" title="5.打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件"></a>5.打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/4.png" alt=""></p>
-<h2 id="6-点击它然后管理"><a href="#6-点击它然后管理" class="headerlink" title="6.点击它然后管理"></a>6.点击它然后管理</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/5.png" alt=""></p>
-<h2 id="7-然后选择导入和导出"><a href="#7-然后选择导入和导出" class="headerlink" title="7.然后选择导入和导出"></a>7.然后选择导入和导出</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/6.png" alt=""><br><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/7.png" alt=""></p>
-<h2 id="规则（链接）：https-github-azurezeng-com-static-HE-GoogleRedirect-json"><a href="#规则（链接）：https-github-azurezeng-com-static-HE-GoogleRedirect-json" class="headerlink" title="规则（链接）：https://github.azurezeng.com/static/HE-GoogleRedirect.json"></a>规则（链接）：<a href="https://github.azurezeng.com/static/HE-GoogleRedirect.json">https://github.azurezeng.com/static/HE-GoogleRedirect.json</a></h2><h2 id="8-记得点击保存"><a href="#8-记得点击保存" class="headerlink" title="8.记得点击保存"></a>8.记得点击保存</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/8.png" alt=""></p>
-<h2 id="9-然后返回查看是否开启"><a href="#9-然后返回查看是否开启" class="headerlink" title="9.然后返回查看是否开启"></a>9.然后返回查看是否开启</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/9.png" alt=""></p>
-<h2 id="10-最后如果全部开启，你就可以不用魔法注册freenom的域名了"><a href="#10-最后如果全部开启，你就可以不用魔法注册freenom的域名了" class="headerlink" title="10.最后如果全部开启，你就可以不用魔法注册freenom的域名了"></a>10.最后如果全部开启，你就可以不用魔法注册freenom的域名了</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/10.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>freenom</category>
-      </categories>
-      <tags>
-        <tag>freenom</tag>
       </tags>
   </entry>
   <entry>
@@ -151,27 +117,61 @@ net start termservice</code></p>
       </tags>
   </entry>
   <entry>
-    <title>将freenom的域名托管到cloudflare上</title>
-    <url>/posts/1.html</url>
-    <content><![CDATA[<h2 id="2022-12-09-08-24-34-星期五"><a href="#2022-12-09-08-24-34-星期五" class="headerlink" title="2022-12-09 08:24:34 星期五"></a>2022-12-09 08:24:34 星期五</h2><p>用cloudflare搭建网站，无需服务器，仅需要一个域名即可食用。</p>
-<h2 id="首先你需要申请一个域名或购买，这里我以freenom为例。"><a href="#首先你需要申请一个域名或购买，这里我以freenom为例。" class="headerlink" title="首先你需要申请一个域名或购买，这里我以freenom为例。"></a>首先你需要申请一个域名或购买，这里我以freenom为例。</h2><p><img src="https://b2.shangskr.top/1.png" alt=""></p>
-<h2 id="然后打开cf根据下图："><a href="#然后打开cf根据下图：" class="headerlink" title="然后打开cf根据下图："></a>然后打开cf根据下图：</h2><p><img src="https://b2.shangskr.top/2.png" alt=""></p>
-<h2 id="将域名添加进去"><a href="#将域名添加进去" class="headerlink" title="将域名添加进去"></a>将域名添加进去</h2><p><img src="https://b2.shangskr.top/3.png" alt=""></p>
-<h2 id="当然这里你可以选择付费，白嫖的也不错，果断选择0元。"><a href="#当然这里你可以选择付费，白嫖的也不错，果断选择0元。" class="headerlink" title="当然这里你可以选择付费，白嫖的也不错，果断选择0元。"></a>当然这里你可以选择付费，白嫖的也不错，果断选择0元。</h2><p><img src="https://b2.shangskr.top/4.png" alt=""></p>
-<h2 id="根据图示：继续"><a href="#根据图示：继续" class="headerlink" title="根据图示：继续"></a>根据图示：继续</h2><p><img src="https://b2.shangskr.top/5.png" alt=""><br><img src="https://b2.shangskr.top/6.png" alt=""></p>
-<h2 id="继续点击完成并检测："><a href="#继续点击完成并检测：" class="headerlink" title="继续点击完成并检测："></a>继续点击完成并检测：</h2><p><img src="https://b2.shangskr.top/7.png" alt=""></p>
-<h2 id="下面这几步直接照做就可以："><a href="#下面这几步直接照做就可以：" class="headerlink" title="下面这几步直接照做就可以："></a>下面这几步直接照做就可以：</h2><p><img src="https://b2.shangskr.top/8.png" alt=""><br><img src="https://b2.shangskr.top/9.png" alt=""><br><img src="https://b2.shangskr.top/10.png" alt=""><br><img src="https://b2.shangskr.top/11.png" alt=""><br><img src="https://b2.shangskr.top/12.png" alt=""></p>
-<h2 id="上述步骤完成后讲自动跳转到这里："><a href="#上述步骤完成后讲自动跳转到这里：" class="headerlink" title="上述步骤完成后讲自动跳转到这里："></a>上述步骤完成后讲自动跳转到这里：</h2><p><img src="https://b2.shangskr.top/13.png" alt=""></p>
-<h2 id="然后打开freenom我的域名，管理域名页面如下图："><a href="#然后打开freenom我的域名，管理域名页面如下图：" class="headerlink" title="然后打开freenom我的域名，管理域名页面如下图："></a>然后打开freenom我的域名，管理域名页面如下图：</h2><p><img src="https://b2.shangskr.top/14.png" alt=""></p>
-<h2 id="然后将cf提供的两个名称复制进去："><a href="#然后将cf提供的两个名称复制进去：" class="headerlink" title="然后将cf提供的两个名称复制进去："></a>然后将cf提供的两个名称复制进去：</h2><p><img src="https://b2.shangskr.top/15.png" alt=""></p>
-<h2 id="完成后会有下图提示："><a href="#完成后会有下图提示：" class="headerlink" title="完成后会有下图提示："></a>完成后会有下图提示：</h2><p><img src="https://b2.shangskr.top/16.png" alt=""></p>
-<h2 id="最后回到cf等待即可（通常5分钟之内就完成）："><a href="#最后回到cf等待即可（通常5分钟之内就完成）：" class="headerlink" title="最后回到cf等待即可（通常5分钟之内就完成）："></a>最后回到cf等待即可（通常5分钟之内就完成）：</h2><p><img src="https://b2.shangskr.top/17.png" alt=""></p>
-<h1 id="关于托管域名到cf就这些了。"><a href="#关于托管域名到cf就这些了。" class="headerlink" title="关于托管域名到cf就这些了。"></a>关于托管域名到cf就这些了。</h1>]]></content>
+    <title>免魔法注册freenom域名的插件和规则导入</title>
+    <url>/posts/3.html</url>
+    <content><![CDATA[<h1 id="免魔法注册freenom域名的插件安装"><a href="#免魔法注册freenom域名的插件安装" class="headerlink" title="免魔法注册freenom域名的插件安装"></a>免魔法注册freenom域名的插件安装</h1><h2 id="1-下面的官网"><a href="#1-下面的官网" class="headerlink" title="1.下面的官网"></a>1.下面的官网</h2><p><a href="https://he.firefoxcn.net/" title="Header Editor">Header Editor</a><br><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/1.png" alt=""></p>
+<h2 id="2-点击开始使用"><a href="#2-点击开始使用" class="headerlink" title="2.点击开始使用"></a>2.点击开始使用</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/2.png" alt=""></p>
+<h2 id="3-你没有前3个浏览器可以点击自分发版本跳转到github"><a href="#3-你没有前3个浏览器可以点击自分发版本跳转到github" class="headerlink" title="3.你没有前3个浏览器可以点击自分发版本跳转到github"></a>3.你没有前3个浏览器可以点击自分发版本跳转到github</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/3.png" alt=""></p>
+<h2 id="4-根据你的版本下载你需要的插件源码"><a href="#4-根据你的版本下载你需要的插件源码" class="headerlink" title="4.根据你的版本下载你需要的插件源码"></a>4.根据你的版本下载你需要的插件源码</h2><h2 id="5-打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件"><a href="#5-打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件" class="headerlink" title="5.打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件"></a>5.打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/4.png" alt=""></p>
+<h2 id="6-点击它然后管理"><a href="#6-点击它然后管理" class="headerlink" title="6.点击它然后管理"></a>6.点击它然后管理</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/5.png" alt=""></p>
+<h2 id="7-然后选择导入和导出"><a href="#7-然后选择导入和导出" class="headerlink" title="7.然后选择导入和导出"></a>7.然后选择导入和导出</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/6.png" alt=""><br><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/7.png" alt=""></p>
+<h2 id="规则（链接）：https-github-azurezeng-com-static-HE-GoogleRedirect-json"><a href="#规则（链接）：https-github-azurezeng-com-static-HE-GoogleRedirect-json" class="headerlink" title="规则（链接）：https://github.azurezeng.com/static/HE-GoogleRedirect.json"></a>规则（链接）：<a href="https://github.azurezeng.com/static/HE-GoogleRedirect.json">https://github.azurezeng.com/static/HE-GoogleRedirect.json</a></h2><h2 id="8-记得点击保存"><a href="#8-记得点击保存" class="headerlink" title="8.记得点击保存"></a>8.记得点击保存</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/8.png" alt=""></p>
+<h2 id="9-然后返回查看是否开启"><a href="#9-然后返回查看是否开启" class="headerlink" title="9.然后返回查看是否开启"></a>9.然后返回查看是否开启</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/9.png" alt=""></p>
+<h2 id="10-最后如果全部开启，你就可以不用魔法注册freenom的域名了"><a href="#10-最后如果全部开启，你就可以不用魔法注册freenom的域名了" class="headerlink" title="10.最后如果全部开启，你就可以不用魔法注册freenom的域名了"></a>10.最后如果全部开启，你就可以不用魔法注册freenom的域名了</h2><p><img src="https://b2.shangskr.top/freenom%E5%85%8D%E9%AD%94%E6%B3%95%E6%8F%92%E4%BB%B6%E5%9B%BE%E6%96%87/10.png" alt=""></p>
+]]></content>
       <categories>
         <category>freenom</category>
       </categories>
       <tags>
         <tag>freenom</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用backblaze+cloudflare搭建免费图床</title>
+    <url>/posts/8.html</url>
+    <content><![CDATA[<h2 id="首先准备一个域名，一个邮箱"><a href="#首先准备一个域名，一个邮箱" class="headerlink" title="首先准备一个域名，一个邮箱"></a>首先准备一个域名，一个邮箱</h2><p>~backbalze的服务器在国外，所以打开会慢emmmm，那么就科学上网（当然不科学上网也可以打开的，那你就看运气吧！）<br>1.在<a href="https://www.cloudflare.com/" title="cloudflare">cloudflare</a>注册并将你的域名加入。（如果不会的话可以看看我以前的文章有说明哦~）<br>2.在<a href="https://www.backblaze.com/b2/cloud-storage.html" title="backblaze">backblaze</a>注册一个账号，并新建一个bucket，记得Files in Bucket are:这里选public就好，就是公开桶。（不然别人无法看到你的图片）避坑：backblaze都是公开的所以大部分不要填写自己的真实信息！！！其实也没什么。<br><img src="https://b2.shangskr.top/B2%2BCF/01.png" alt=""></p>
+<h2 id="打开backblaze开始配置"><a href="#打开backblaze开始配置" class="headerlink" title="打开backblaze开始配置"></a>打开backblaze开始配置</h2><p>1.这里我用cloudflare演示，首先随便上传一个照片，注意要用到下图的这个友好链接的哦~<br><img src="https://b2.shangskr.top/B2%2BCF/02.png" alt=""><br>2.打开cloudflare控制页面，找到dns记录 设置如下图填写添加一个记录<br><img src="https://b2.shangskr.top/B2%2BCF/04.png" alt=""><br>这一步好了以后基本可以用了<br>现在将backblaze链接里面的域名<a href="https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png">https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png</a><br>改为<a href="https://b2.shangskr.top/file/tuchuang123/B2%2BCF/03.png(这样，就可以用过cloudflare来访问了">https://b2.shangskr.top/file/tuchuang123/B2%2BCF/03.png(这样，就可以用过cloudflare来访问了</a>)<br><div class="note warning flat"><p>图床链接最好用backblaze提供的友好链接，然后需要手动换成自己设置的链接，这样就可以了。（如果还是用原来的，岂不是什么也没做）</p>
+</div><br>3.这样基本完成，但是backblaze每天有一定的访问次数限制，这样的话我们利用cloudflare的超强缓存就可以做到无限回流了（无限白嫖哦~亲测有效）<br>打开cloudfalre缓存时间设置。这里可以在cloudflare设置也可以在backblaze设置，当然我都设置了的（吸吸）<br><img src="https://b2.shangskr.top/B2%2BCF/05.png" alt=""><br>接下来在cloudflare设置一个转换规则(因为图床的链接还是不够简化，用这个转换规则就可以使它更简洁了呢)如图：<br><img src="https://b2.shangskr.top/B2%2BCF/06.png" alt=""><br><img src="https://b2.shangskr.top/B2%2BCF/07.png" alt=""><br>concat(“/file/tuchuang123”,http.request.uri.path) 这里的/file/后面改成你自己的桶名<br>这样子原链接<a href="https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png">https://f004.backblazeb2.com/file/tuchuang123/B2%2BCF/03.png</a><br>就可以通过<a href="https://b2.shangskr.top/B2%2BCF/03.png来访问了">https://b2.shangskr.top/B2%2BCF/03.png来访问了</a><br>4.在backblaze中设置缓存周期<br><img src="https://b2.shangskr.top/B2%2BCF/08.png" alt=""><br><img src="https://b2.shangskr.top/B2%2BCF/09.png" alt=""><br>好了完美了</p>
+<h2 id="光用网页上传也不是个办法啊，那么就用这个"><a href="#光用网页上传也不是个办法啊，那么就用这个" class="headerlink" title="光用网页上传也不是个办法啊，那么就用这个"></a>光用网页上传也不是个办法啊，那么就用这个</h2><p>1.点击App keys,添加一个新的key,bucket就选你刚创建的那个,记录下你的密钥,之后要在ShareX中用！！！<br><img src="https://b2.shangskr.top/B2%2BCF/03.png" alt=""><br>2.大概就这样了emmmm，累跌<br>配置ShareX.<br><img src="https://b2.shangskr.top/B2%2BCF/10.png" alt="图片来自https://www.liuzhanwu.com/17373.html" title="图片来自https://www.liuzhanwu.com/17373.html"><br>emmm困死我了，不行了开始偷图片了，不想弄了。<br>差不多这里也就好了，配置好就好了<br>3.扩展工具（来自<a href="https://blog.csdn.net/weixin_43511521/article/details/128438259" title="csdn">csdn</a>）<br>假如你是用的typecho，还可以使用上传插件实现自动上传，无需登录backblaze：<br>typecho - b2file 插件地址：<a href="https://github.com/qq80284445/Typecho-B2File">https://github.com/qq80284445/Typecho-B2File</a><br>另：backblaze支持s3 ，所以你用Picgo等软件上传的话，只需要添加个s3插件就可以了.<br><div class="note primary flat"><p>睡觉觉困死了2023-05-20 22:52:51 星期六</p>
+</div></p>
+]]></content>
+      <categories>
+        <category>图床</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>cloudflare</tag>
+        <tag>backblaze</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>申请免费UNIX服务器</title>
+    <url>/posts/5.html</url>
+    <content><![CDATA[<p>Unix是20世纪70年代初出现的一个操作系统，除了作为网络操作系统之外，还可以作为单机操作系统使用。Unix作为一种开发平台和台式操作系统获得了广泛使用，主要用于工程应用和科学计算等领域。</p>
+<h1 id="发展历史："><a href="#发展历史：" class="headerlink" title="发展历史："></a>发展历史：</h1><h2 id="1-UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth-Thompson和Dennis-Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K-Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。"><a href="#1-UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth-Thompson和Dennis-Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K-Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。" class="headerlink" title="1.UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth Thompson和Dennis Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K.Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。"></a>1.UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth Thompson和Dennis Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K.Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。</h2><h2 id="2-1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX-VersionV。1974年，Kenneth-Thompson和Dennis-Ritchie合写的“The-UNIX-Time-Sharing-System”在Communication-of-ACM上发表，正式向外界披露了UNIX系统。"><a href="#2-1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX-VersionV。1974年，Kenneth-Thompson和Dennis-Ritchie合写的“The-UNIX-Time-Sharing-System”在Communication-of-ACM上发表，正式向外界披露了UNIX系统。" class="headerlink" title="2.1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX VersionV。1974年，Kenneth Thompson和Dennis Ritchie合写的“The UNIX Time-Sharing System”在Communication of ACM上发表，正式向外界披露了UNIX系统。"></a>2.1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX VersionV。1974年，Kenneth Thompson和Dennis Ritchie合写的“The UNIX Time-Sharing System”在Communication of ACM上发表，正式向外界披露了UNIX系统。</h2><h2 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h2><h2 id="1-首先去网站注册（这里有两个网站都可以用）"><a href="#1-首先去网站注册（这里有两个网站都可以用）" class="headerlink" title="1.首先去网站注册（这里有两个网站都可以用）"></a>1.首先去网站注册（这里有两个网站都可以用）</h2><p>（1）<a href="http://sdf.org/">http://sdf.org/</a><br>（2）<a href="http://freeshell.org/">http://freeshell.org/</a></p>
+<h2 id="打开网站按下图填写的注册"><a href="#打开网站按下图填写的注册" class="headerlink" title="打开网站按下图填写的注册"></a>打开网站按下图填写的注册</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/1.png" alt=""></p>
+<h3 id="2-注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看"><a href="#2-注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看" class="headerlink" title="2.注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看"></a>2.注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看</h3><h2 id="3-然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。"><a href="#3-然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。" class="headerlink" title="3.然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。"></a>3.然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/2.png" alt=""></p>
+<h2 id="创建一个新主机"><a href="#创建一个新主机" class="headerlink" title="创建一个新主机"></a>创建一个新主机</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/3.png" alt=""></p>
+<h2 id="4-然后根据邮件的内容填写账号密码等等…"><a href="#4-然后根据邮件的内容填写账号密码等等…" class="headerlink" title="4.然后根据邮件的内容填写账号密码等等…"></a>4.然后根据邮件的内容填写账号密码等等…</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/4.png" alt=""></p>
+<h2 id="填写好后保存"><a href="#填写好后保存" class="headerlink" title="填写好后保存"></a>填写好后保存</h2><h2 id="然后双击打开…等待连接"><a href="#然后双击打开…等待连接" class="headerlink" title="然后双击打开…等待连接"></a>然后双击打开…等待连接</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/5.png" alt=""></p>
+<h2 id="5-连接成功以后会让你输入key，这里直接跳过（按空格键跳过）"><a href="#5-连接成功以后会让你输入key，这里直接跳过（按空格键跳过）" class="headerlink" title="5.连接成功以后会让你输入key，这里直接跳过（按空格键跳过）"></a>5.连接成功以后会让你输入key，这里直接跳过（按空格键跳过）</h2><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/6.png" alt=""></p>
+<h2 id="6-然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。"><a href="#6-然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。" class="headerlink" title="6.然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。"></a>6.然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。</h2><h4 id="最后附上效果图："><a href="#最后附上效果图：" class="headerlink" title="最后附上效果图："></a>最后附上效果图：</h4><p><img src="https://b2.shangskr.top/UNIX%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E6%96%87/7.png" alt=""></p>
+<h2 id="没用的知识又增加了！！！"><a href="#没用的知识又增加了！！！" class="headerlink" title="没用的知识又增加了！！！"></a>没用的知识又增加了！！！</h2>]]></content>
+      <categories>
+        <category>其它</category>
+      </categories>
+      <tags>
+        <tag>免费UNIX服务器</tag>
       </tags>
   </entry>
 </search>
