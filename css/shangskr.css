@@ -316,7 +316,7 @@ h6::before {
 /* 首页分类条展示 */
 #category-bar{
     padding: 0.4rem 1rem 0.4rem 0.5rem;
-    background: var(--heo-card-bg);
+    background-color: #ffffff;
     border-radius: 12px;
     display: flex;
     white-space: nowrap;
@@ -327,7 +327,7 @@ h6::before {
   
   @media screen and (max-width: 768px){
     #category-bar{
-      border-radius: 0;
+      border-radius: 12px;
     }
   }
   
