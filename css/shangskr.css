@@ -392,6 +392,6 @@ border: 3px solid #19a5c1;
     line-height: 30px!important;
 }
 .page-number{
-    line-height: 2em;
+    line-height: 2em!important;
 }
 

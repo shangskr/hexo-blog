@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hexo.shangskr.top/diary/info.html</loc>
+    <loc>https://hexo.shangskr.top/diary/index.html</loc>
     
     <lastmod>2023-07-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/diary/index.html</loc>
+    <loc>https://hexo.shangskr.top/diary/info.html</loc>
     
     <lastmod>2023-07-09</lastmod>
     
@@ -167,28 +167,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/Windows/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.shangskr.top/tags/freenom/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/tags/github/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -236,6 +215,27 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://hexo.shangskr.top/tags/github/</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/tags/RDPWrap/</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/tags/Windows/</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -246,21 +246,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/categories/windows/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.shangskr.top/categories/freenom/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/categories/github/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -282,6 +268,20 @@
   
   <url>
     <loc>https://hexo.shangskr.top/categories/%E5%85%B6%E5%AE%83/</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/categories/github/</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/categories/windows/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
