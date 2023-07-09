@@ -383,3 +383,15 @@ h6::before {
     margin-left: 1rem;
     font-weight: bold;
   }
+
+  /* 所有卡片线框式 */
+  .card-widget,#rightside-config-hide button,#rightside-config-show button,.recent-post-item,#archive,#page,#post,#category-bar,.page-number{
+border: 3px solid #19a5c1;
+}
+#rightside-config-hide button,#rightside-config-show button{
+    line-height: 30px!important;
+}
+.page-number{
+    line-height: 2em;
+}
+
