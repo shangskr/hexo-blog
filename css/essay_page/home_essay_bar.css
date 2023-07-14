@@ -1,0 +1,85 @@
+#bbTimeList {
+  background: var(--anzhiyu-white);
+  color: var(--anzhiyu-fontcolor);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  box-shadow: var(--anzhiyu-shadow-lightblack);
+  display: flex;
+  transition: all 0.3s ease 0s;
+  margin: 1rem auto 0;
+  border: 3px solid #19a5c1;
+  align-items: center;
+  height: 32px;
+  width: 100%;
+}
+[data-theme="dark"] #bbTimeList,[data-theme="dark"] #category-bar {
+  background: #000 !important;
+}
+#bbtalk {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#bber-talk {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.bber-logo {
+  font-size: 2rem;
+  line-height: 22px;
+  margin-right: 1rem;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.bber-gotobb {
+  line-height: 25px;
+  margin-left: 1rem;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+#bber-talk .li-style {
+  width: 100%;
+  max-width: 100%;
+  height: 25px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+  font-weight: 700;
+  margin: auto;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#bbTimeList:hover {
+  border: var(--style-border-hover);
+  box-shadow: var(--anzhiyu-shadow-main);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
