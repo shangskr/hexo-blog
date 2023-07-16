@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>为你的站点加一个监控吧！</title>
+    <url>/posts/9.html</url>
+    <content><![CDATA[<h2 id="演示：安小歪的网站状态"><a href="#演示：安小歪的网站状态" class="headerlink" title="演示：安小歪的网站状态"></a>演示：<a href="https://status.shangskr.top/" title="安小歪的网站状态">安小歪的网站状态</a></h2><p><img src="https://b2.shangskr.top/uptime-robot/18.webp" alt=""></p>
+<h2 id="首先要在uptimerobot注册一个账号，然后到邮箱去激活就好了。"><a href="#首先要在uptimerobot注册一个账号，然后到邮箱去激活就好了。" class="headerlink" title="首先要在uptimerobot注册一个账号，然后到邮箱去激活就好了。"></a>首先要在<a href="https://uptimerobot.com/" title="uptimerobot">uptimerobot</a>注册一个账号，然后到邮箱去激活就好了。</h2><p><img src="https://b2.shangskr.top/uptime-robot/1.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/2.webp" alt=""></p>
+<h2 id="然后到-UptimeRobot-，在-My-Settings-页面你可以添加多种接受通知的方式"><a href="#然后到-UptimeRobot-，在-My-Settings-页面你可以添加多种接受通知的方式" class="headerlink" title="然后到 UptimeRobot ，在 My Settings 页面你可以添加多种接受通知的方式"></a>然后到 UptimeRobot ，在 My Settings 页面你可以添加多种接受通知的方式</h2><p><img src="https://b2.shangskr.top/uptime-robot/4.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/5.webp" alt=""></p>
+<h2 id="接下来需要先到-UptimeRobot-添加站点监控，并在-My-Settings-页面获取-API-Key（免费账户只能监测HEAD，可以添加多个监测的站点和服务）"><a href="#接下来需要先到-UptimeRobot-添加站点监控，并在-My-Settings-页面获取-API-Key（免费账户只能监测HEAD，可以添加多个监测的站点和服务）" class="headerlink" title="接下来需要先到 UptimeRobot 添加站点监控，并在 My Settings 页面获取 API Key（免费账户只能监测HEAD，可以添加多个监测的站点和服务）"></a>接下来需要先到 UptimeRobot 添加站点监控，并在 My Settings 页面获取 API Key（免费账户只能监测HEAD，可以添加多个监测的站点和服务）</h2><p><img src="https://b2.shangskr.top/uptime-robot/3.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/6.webp" alt=""></p>
+<h2 id="创建好以后就是这样子的"><a href="#创建好以后就是这样子的" class="headerlink" title="创建好以后就是这样子的"></a>创建好以后就是这样子的</h2><p><img src="https://b2.shangskr.top/uptime-robot/7.webp" alt=""></p>
+<h2 id="复用这个项目"><a href="#复用这个项目" class="headerlink" title="复用这个项目"></a>复用这个项目</h2><p>1.fork 一份到你的 github 账号下<a href="https://github.com/shangskr/uptime-status/" title="GitHub">GitHub</a><br>2.修改配置文件：<kbd>public/config.js</kbd><br>3.fork完成之后部署到vercel（注意这里部署类型选择other）<br><img src="https://b2.shangskr.top/uptime-robot/8.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/9.webp" alt=""><br>4.这里需要给vercel解析一个域名（因为vercel的提供的域名被墙了）这里以cloudflare为例<br><img src="https://b2.shangskr.top/uptime-robot/12.webp" alt=""><br>然后打开vercel添加域名<br><img src="https://b2.shangskr.top/uptime-robot/10.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/11.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/13.webp" alt=""><br>5.域名解析成功以后打开uptimerobot添加api（uptimerobot提供3种api这里推荐第二个api）<br><img src="https://b2.shangskr.top/uptime-robot/14.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/15.webp" alt=""><br>复制api然后到你刚刚fork仓库的<kbd>public/config.js</kbd>修改api<br><img src="https://b2.shangskr.top/uptime-robot/16.webp" alt=""><br><img src="https://b2.shangskr.top/uptime-robot/17.webp" alt=""><br>最后就完成了！就可以引入到blog页面了<br><img src="https://b2.shangskr.top/uptime-robot/18.webp" alt=""><br><div class="note warning simple"><p>还有一种方案使用cloudflare部署的需要fork这个项目<a href="https://github.com/Ice-Hazymoon/status" title="GitHub">GitHub</a><br>具体教程参考这里<a href="https://www.ngui.cc/el/3077750.html?action=onClick" title="cloudflare部署">cloudflare部署</a></p>
+</div></p>
+]]></content>
+      <categories>
+        <category>监控</category>
+      </categories>
+      <tags>
+        <tag>监控</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用backblaze+cloudflare搭建免费图床</title>
     <url>/posts/8.html</url>
     <content><![CDATA[<h2 id="首先准备一个域名，一个邮箱"><a href="#首先准备一个域名，一个邮箱" class="headerlink" title="首先准备一个域名，一个邮箱"></a>首先准备一个域名，一个邮箱</h2><p>~backbalze的服务器在国外，所以打开会慢emmmm，那么就科学上网（当然不科学上网也可以打开的，那你就看运气吧！）<br>1.在<a href="https://www.cloudflare.com/" title="cloudflare">cloudflare</a>注册并将你的域名加入。（如果不会的话可以看看我以前的文章有说明哦~）<br>2.在<a href="https://www.backblaze.com/b2/cloud-storage.html" title="backblaze">backblaze</a>注册一个账号，并新建一个bucket，记得Files in Bucket are:这里选public就好，就是公开桶。（不然别人无法看到你的图片）避坑：backblaze都是公开的所以大部分不要填写自己的真实信息！！！其实也没什么。<br><img src="https://b2.shangskr.top/B2%2BCF/01.webp" alt=""></p>
