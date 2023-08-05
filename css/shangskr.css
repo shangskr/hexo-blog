@@ -498,3 +498,23 @@ border: 3px solid #19a5c1;
 }
 #wl-edit {
     background: url(/img/waline-bg.gif) 100% 100% no-repeat;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.sakana-box{
+    position: fixed!important;
+    right: 0;
+    bottom: 0;
+    transform-origin: 100% 100%!important; /* 从右下开始变换 */
+    z-index:9999;
+}
+/* 嘉然live2d */
+#pio {
+  height: 240px;
+    vertical-align: middle
+}
