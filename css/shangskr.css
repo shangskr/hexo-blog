@@ -499,6 +499,7 @@ border: 3px solid #19a5c1;
 #wl-edit {
     background: url(/img/waline-bg.gif) 100% 100% no-repeat;
 }
+/*首页菜单栏搜索按钮css阿里巴巴矢量图标*/
 .icon {
   width: 1em;
   height: 1em;
@@ -506,6 +507,7 @@ border: 3px solid #19a5c1;
   fill: currentColor;
   overflow: hidden;
 }
+/*右下角石蒜模拟器*/
 .sakana-box{
     position: fixed!important;
     right: 0;

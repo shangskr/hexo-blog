@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>为hexo加一个朋友圈</title>
+    <url>/posts/10.html</url>
+    <content><![CDATA[<p><a href="https://fcircle-doc.yyyzyyyz.cn/" title="文章摘取地点">文章摘取地点</a><br>本人hexo朋友圈由<a href="https://blog.sinzmise.top/" title="`SZ・Ninty`"><code>SZ・Ninty</code></a>提供帮助完成！<br>特别感谢<a href="https://blog.sinzmise.top/" title="@SZ・Ninty">@SZ・Ninty</a>的帮助！<br><details class="folding-tag" cyan hide><summary> 心历路程 </summary>
+              <div class='content'>
+              <p>在<a href="https://blog.sinzmise.top/" title="@SZ・Ninty">@SZ・Ninty</a>的帮助下一步一步完成，中间也是出错了emmm因为我打键盘速度过快然后打错了许多单词或者密码emmm导致认为后端部署出问题了呢~最后也是完成了，虽然当时弄得有点迷糊，没有跟上，现在弄清顺序思路了，笑哭.jpg</p>
+              </div>
+            </details></p>
+<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><p>项目部署分为后端部署和前端部署。</p>
+<h2 id="后端部署概览："><a href="#后端部署概览：" class="headerlink" title="后端部署概览："></a>后端部署概览：</h2><p>后端部署目前提供github，server，docker三种方式，数据库可以选择leancloud，mysql，sqlite，mongodb。<br>自5.x版本以后，leancloud不再作为默认存储，改为更简单易用的sqlite作为默认。(这里数据库不建议用sqlite)<a href="https://blog.sinzmise.top/" title="`SZ・Ninty`"><code>SZ・Ninty</code></a>试过了好像不太行！</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>leancloud存储</th>
+<th>mysql存储</th>
+<th>sqlite存储</th>
+<th>mongodb存储</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>github部署</td>
+<td>github+leancloud</td>
+<td>github+mysql</td>
+<td>github+sqlite(默认选项)</td>
+<td>github+mongodb</td>
+</tr>
+<tr>
+<td>server部署</td>
+<td>server+leancloud</td>
+<td>server+mysql</td>
+<td>server+sqlite</td>
+<td>server+mongodb</td>
+</tr>
+<tr>
+<td>docker部署</td>
+<td>docker+leancloud</td>
+<td>docker+mysql</td>
+<td>docker+sqlite</td>
+<td>docker+mongodb</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>部署方法：github+vercel+mongodb<br>fork友链朋友圈的项目仓库，地址：<a href="https://github.com/Rock-Candy-Tea/hexo-circle-of-friends">https://github.com/Rock-Candy-Tea/hexo-circle-of-friends</a> 注意：如果前端部署采用<a href="https://fcircle-doc.yyyzyyyz.cn/#/frontenddeploy" title="带管理面板的前端方案">带管理面板的前端方案</a>，则fork时不要修改仓库名称，否则会导致管理面板部分功能不可用。<br>编辑<code>/hexo_circle_of_friends/fc_settings.yaml</code>文件，需要修改的配置如下：<br><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">LINK:</span></span><br><span class="line">    <span class="bullet">-</span> &#123;<span class="attr">link:</span> <span class="string">&quot;https://www.yyyzyyyz.cn/link/&quot;</span>, <span class="attr">theme:</span> <span class="string">&quot;butterfly&quot;</span>&#125;  <span class="comment"># link改为你的友链页地址，theme选择你的博客主题</span></span><br></pre></td></tr></table></figure><br>然后点击仓库的Settings—&gt;Secrets—&gt;New repository secret<br><img src="https://fcircle-doc.yyyzyyyz.cn/QQ%E5%9B%BE%E7%89%8720220205080305.png" alt=""><br>添加2个环境变量secret：<br><code>MONGODB_URI</code> ：mongodb提供的数据库链接以mongodb+srv开头或mongodb开头的<br><code>STORAGE_TYPE</code> ：存储方式，填写mongodb<br>配置完成后，应该如下图所示：<br><img src="https://b2.shangskr.top/%E4%B8%BAhexo%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%9C%8B%E5%8F%8B%E5%9C%88/1.webp" alt=""><br>然后点击仓库的setting—&gt;Actions—&gt;General—&gt;勾选Read and write permissions—&gt;Save<br><img src="https://fcircle-doc.yyyzyyyz.cn/workflow_permissions.png" alt=""><br>前往<a href="https://vercel.com/" title="vercel官网">vercel官网</a>，直接用github创建账号并用手机号绑定。<br>点击New Project新建项目<br>找到Import Git Repository，应该可以看见你刚刚fork的仓库，点击Import。<br><img src="https://fcircle-doc.yyyzyyyz.cn/QQ%E6%88%AA%E5%9B%BE20220205082743.png" alt=""><br>然后添加vercel环境变量,当然也可以Deploy以后在Settings—&gt;Environment Variables添加（注意：VERCEL_ACCESS_TOKEN环境变量只能Deploy以后添加）<br>添加GH_NAME、GH_EMAIL、GH_TOKEN、MONGODB_URI，此外，还需要添加VERCEL_ACCESS_TOKEN<br>GH_TOKEN的获取方法<a href="https://github.com/shangskr/memos-on-replit" title="在这里面的README.md中">在这里面的README.md中</a><br>VERCEL_ACCESS_TOKEN获取方法<br>点击vercel页面右上角的Settings—&gt;Tokens—-&gt;Create<br><img src="https://fcircle-doc.yyyzyyyz.cn/image-20221008231925321.png" alt=""><br>随便输入一个名称后，点击CREATE TOKEN，复制生成的token，添加到vercel环境变量中即可<br><img src="https://fcircle-doc.yyyzyyyz.cn/image-20221008232056360.png" alt=""><br>添加完成后，应该如下图所示：<br><img src="https://b2.shangskr.top/%E4%B8%BAhexo%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%9C%8B%E5%8F%8B%E5%9C%88/2.webp" alt=""><br><div class="note primary flat"><p>2022-8-27，*.vercel.app在中国大陆遭遇污染导致无法访问，友链朋友圈的vercel部署也会受到影响，可以通过解析到自定义域名来解决，或者切换部署方式。</p>
+</div><br>接下来，回到github，打开刚才fork的项目打开hexo_circle_of_friends/fc_settings.yaml（这里我们需要手动添加SETTINGS_FRIENDS_LINKS因为我们的hexo友链魔改过了所以不会自动爬取）<br><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置项友链</span></span><br><span class="line"><span class="comment"># enable：# 是否启用配置项友链 true/false（针对还未适配主题或者有定制需求的用户）</span></span><br><span class="line"><span class="comment"># json_api：通过json格式配置友链，详见：https://fcircle-doc.yyyzyyyz.cn/#/developmentdoc?id=配置项json友链</span></span><br><span class="line"><span class="comment"># list字段填写格式：[&quot;name&quot;, &quot;link&quot;, &quot;avatar&quot;,&quot;suffix&quot;]，其中：</span></span><br><span class="line"><span class="comment">#       name：必填，友链的名字</span></span><br><span class="line"><span class="comment">#       link：必填，友链主页地址</span></span><br><span class="line"><span class="comment">#       avatar：必填，头像地址</span></span><br><span class="line"><span class="comment">#       suffix：选填，自定义订阅后缀，主要针对不规范的网站订阅后缀，见示例2</span></span><br><span class="line"><span class="attr">SETTINGS_FRIENDS_LINKS:</span> &#123;</span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">json_api:</span> <span class="string">&quot;&quot;</span>,</span><br><span class="line">    <span class="attr">list:</span> [</span><br><span class="line">        <span class="comment"># 示例1：</span></span><br><span class="line">        <span class="comment"># [&quot;贰猹の小窝&quot;, &quot;https://noionion.top/&quot;, &quot;https://pub-noionion.oss-cn-hangzhou.aliyuncs.com/head.jpg&quot;],</span></span><br><span class="line">        <span class="comment"># [&quot;Akilarの糖果屋&quot;, &quot;https://akilar.top/&quot;, &quot;https://akilar.top/images/headimage.png&quot;],</span></span><br><span class="line">        <span class="comment"># 示例2：使用suffix的配置如下</span></span><br><span class="line">        <span class="comment"># 程序目前自动获取 &quot;atom.xml&quot;, &quot;feed/atom&quot;, &quot;rss.xml&quot;, &quot;rss2.xml&quot;, &quot;feed&quot;, &quot;index.xml&quot; 这些后缀</span></span><br><span class="line">        <span class="comment"># 如果目标地址的后缀不在其中，就可以在这里添加</span></span><br><span class="line">        <span class="comment"># 比如 https://elizen.me/hello.xml ，填写：</span></span><br><span class="line">        <span class="comment"># [&quot;elizen&quot;, &quot;https://elizen.me/&quot;, &quot;https://akilar.top/images/headimage.png&quot;, &quot;hello.xml&quot;]</span></span><br><span class="line">        [<span class="string">&quot;九弦之屋&quot;</span>, <span class="string">&quot;https://blog.sinzmise.top/&quot;</span>, <span class="string">&quot;https://sinzmiseblog.netlify.app/img/avatar.png&quot;</span>],</span><br><span class="line">        [<span class="string">&quot;千寻&quot;</span>, <span class="string">&quot;https://blog.qianxun7747.eu.org/&quot;</span>, <span class="string">&quot;https://cdn.staticaly.com/gh/qianxun7747/picx-images-hosting@master/xxx/tx.63ep7yknivg0.jpg&quot;</span>],</span><br><span class="line">        [<span class="string">&quot;福福不服&quot;</span>, <span class="string">&quot;https://ffbf.top/&quot;</span>, <span class="string">&quot;https://ffbf.top/upload/logo3.jpeg&quot;</span>],</span><br><span class="line">        [<span class="string">&quot;轻笑Chuckle&quot;</span>, <span class="string">&quot;https://www.qcqx.cn/&quot;</span>, <span class="string">&quot;https://www.qcqx.cn/img/head.webp&quot;</span>]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># get links from gitee</span></span><br><span class="line"><span class="comment"># 从gitee issue中获取友链</span></span><br><span class="line"><span class="attr">GITEE_FRIENDS_LINKS:</span> &#123;</span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span>, <span class="comment"># true 开启gitee issue兼容</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">&quot;normal&quot;</span>,  <span class="comment"># volantis/stellar用户请在这里填写volantis</span></span><br><span class="line">    <span class="attr">owner:</span>  <span class="string">&quot;ccknbc&quot;</span>,  <span class="comment"># 填写你的gitee用户名</span></span><br><span class="line">    <span class="attr">repo:</span>  <span class="string">&quot;blogroll&quot;</span>,  <span class="comment"># 填写你的gitee仓库名</span></span><br><span class="line">    <span class="attr">state:</span>  <span class="string">&quot;open&quot;</span>,  <span class="comment"># 填写抓取的issue状态(open/closed)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>接下来，回到github，启用fork后仓库的github action，点击Actions—&gt;I understand my workflows, go ahead and enable them<br><img src="https://fcircle-doc.yyyzyyyz.cn/QQ%E6%88%AA%E5%9B%BE20220205081120.png" alt=""><br>之后点击update-friends-posts并启用workflow<br><img src="https://fcircle-doc.yyyzyyyz.cn/QQ%E6%88%AA%E5%9B%BE20220205081424.png" alt=""><br>然后点击Run workflow—-&gt;Run workflow进行第一次运行<br><img src="https://fcircle-doc.yyyzyyyz.cn/image-20221008232746973.png" alt=""><br>等待运行完毕后，仓库应该会上传data.db，并且vercel也会同步更新。<br><a href="https://fcircle-doc.yyyzyyyz.cn/#/settings" title="其他的数据库配置请看这里">其他的数据库配置请看这里</a></p>
+<h2 id="前端部署概览：教程摘自安知鱼大佬"><a href="#前端部署概览：教程摘自安知鱼大佬" class="headerlink" title="前端部署概览：教程摘自安知鱼大佬"></a>前端部署概览：教程摘自<a href="https://blog.anheyu.com/posts/3753.html" title="安知鱼大佬">安知鱼大佬</a></h2><p>前端采用<a href="https://blog.anheyu.com/posts/3753.html" title="安知鱼方案">安知鱼方案</a><br>安装插件<br>在博客根目录<code>[Blogroot]</code>下打开终端，运行以下指令（与旧版前端方案不兼容，如有安装旧版请先卸载）：（这里我只运行了第一个插件，请自行选择）<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-butterfly-fcircle --save</span><br><span class="line">npm uninstall hexo-filter-fcircle --save</span><br><span class="line">npm install hexo-filter-fcircle-anzhiyu --save</span><br></pre></td></tr></table></figure><br>添加配置信息<br>在站点配置文件<code>_config.yml</code>或者主题配置文件例如<code>_config.butterfly.yml</code>中添加<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># fcircle</span><br><span class="line"># see https://anheyu.com/posts/3753.html</span><br><span class="line">fcircle:</span><br><span class="line">  enable: true #控制开关</span><br><span class="line">  apiurl: https://friends.shangskr.top/ #api地址</span><br><span class="line">  initnumber: 30 #【可选】页面初始化展示文章数量</span><br><span class="line">  stepnumber: 30 #【可选】每次加载增加的篇数</span><br><span class="line">  css: https://npm.elemecdn.com/hexo-filter-fcircle-anzhiyu@1.1.2/assets/css/default.css #【可选】开发者接口，自定义css链接</span><br><span class="line">  js: https://npm.elemecdn.com/hexo-filter-fcircle-anzhiyu@1.1.2/assets/js/fcircle.js #【可选】开发者接口，自定义js链接</span><br><span class="line">  fetchJs: https://npm.elemecdn.com/hexo-filter-fcircle-anzhiyu@1.1.2/assets/js/fetch.js</span><br><span class="line">  randomFriendsPostJS: https://npm.elemecdn.com/hexo-filter-fcircle-anzhiyu@1.1.2/assets/js/random-friends-post.js</span><br><span class="line">  topIcon: fas fa-arrow-right</span><br><span class="line">  topLink: /about/</span><br><span class="line">  top_background: https://hexo.shangskr.top/img/guangyu.jpg</span><br><span class="line">  path: /fcircle #【可选】fcircle的路径名称。默认为 fcircle，生成的页面为 fcircle/index.html</span><br><span class="line">  front_matter: #【可选】fcircle页面的 front_matter 配置</span><br><span class="line">    title: 朋友圈</span><br><span class="line">    comments: false</span><br><span class="line">    aside: false</span><br><span class="line">    top_img: false</span><br></pre></td></tr></table></figure><br>插件参数释义</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>备选值/类型</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable</td>
+<td>true/false</td>
+<td>控制开关</td>
+</tr>
+<tr>
+<td>apiurl</td>
+<td>URL</td>
+<td>api 链接，配置教程参看<a href="https://fcircle-doc.js.cool/#/backenddeploy" title="后端部署文档">后端部署文档</a></td>
+</tr>
+<tr>
+<td>initnumber</td>
+<td>number</td>
+<td>【可选】填写阿拉伯数字，页面展示文章数量，默认 20</td>
+</tr>
+<tr>
+<td>stepnumber</td>
+<td>number</td>
+<td>【可选】填写阿拉伯数字，每次加载增加的篇数，默认 10</td>
+</tr>
+<tr>
+<td>error_img</td>
+<td>URL</td>
+<td>【可选】头像图片加载失败时的默认头像</td>
+</tr>
+<tr>
+<td>css</td>
+<td>URL</td>
+<td>【可选】开发者接口，自定义 css 链接</td>
+</tr>
+<tr>
+<td>js</td>
+<td>URL</td>
+<td>【可选】开发者接口，自定义 js 链接</td>
+</tr>
+<tr>
+<td>fetchJs</td>
+<td>URL</td>
+<td>【可选】开发者接口，自定义 fetchJs 链接</td>
+</tr>
+<tr>
+<td>randomFriendsPostJS</td>
+<td>URL</td>
+<td>【可选】开发者接口，自定义 randomFriendsPostJS 链接</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>【可选】字符串，fcircle 的路径名称。默认为 fcircle，生成的页面为 fcircle/index.html</td>
+</tr>
+<tr>
+<td>topIcon</td>
+<td>string</td>
+<td>【可选】字符串，顶部按钮的图标类名</td>
+</tr>
+<tr>
+<td>topLink</td>
+<td>URL</td>
+<td>【可选】字符串，顶部按钮点击跳转的链接（仅支持 pjax 跳转</td>
+</tr>
+<tr>
+<td>front_matter</td>
+<td>object</td>
+<td>【可选】写法见上文示例，fcircle 页面的 front_matter 配置</td>
+</tr>
+<tr>
+<td>top_background</td>
+<td>URL</td>
+<td>【可选】字符串，页面顶部模块背景图</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>顶部图片样式修改<br>可以通过配置项top_background修改<br>最后添加到主题文件的_config.yml中的menu:<br>朋友圈: /fcircle/ ||<br>就完成了</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为你的站点加一个监控吧！</title>
     <url>/posts/9.html</url>
     <content><![CDATA[<h2 id="演示：安小歪的网站状态"><a href="#演示：安小歪的网站状态" class="headerlink" title="演示：安小歪的网站状态"></a>演示：<a href="https://status.shangskr.top/" title="安小歪的网站状态">安小歪的网站状态</a></h2><p><img src="https://b2.shangskr.top/uptime-robot/18.webp" alt=""></p>
