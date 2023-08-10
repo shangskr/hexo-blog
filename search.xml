@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>uptime-kuma它来了！</title>
+    <url>/posts/11.html</url>
+    <content><![CDATA[<h2 id="首先打开Replit官网"><a href="#首先打开Replit官网" class="headerlink" title="首先打开Replit官网"></a>首先打开<a href="https://replit.com/" title="Replit">Replit</a>官网</h2><p>首先点击 <code>Create a Repl</code> —&gt; <code>Import from GitHub</code>，填写作者的 <code>Repo URL</code> 地址，并更改语言为 <code>bash</code>，最后点击 <code>Import from GitHub</code> 进行部署<br>Repo URL 地址为<code>shangskr/uptime-kuma</code><br>kuma的<a href="https://github.com/shangskr/uptime-kuma" title="github">github</a>仓库<br>从 GitHub 上 Clone 成功后，配置文件 “.replit”（首次会出现在右上，后期可以在 File 选项卡中选择 “Show hidden files” 查看该配置文件），配置运行命令如下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node server/server.js</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/1.webp" alt=""><br>此时暂不运行，在右侧的 Console 选项卡里输入，并选择第一个选项 nodejs-16_x.out 进行安装环境<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/2.webp" alt=""><br>键入 .exit 退出 node<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.<span class="built_in">exit</span></span><br></pre></td></tr></table></figure><br>继续输入 npm run setup，然后等待片刻即可<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run setup</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/3.webp" alt=""></p>
+<h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><p>最后点击 “Run” 或是 “Ctrl+Enter” 来运行 Uptime-Kuma，若右上角处出现 Uptime-Kuma 创建账户页面，则配置成功<br><img src="https://b2.shangskr.top/uptime-kuma/4.webp" alt=""><br>最后创建一个管理员账号就可以了！<br>记得绑定域名哦~<br><div class="note warning simple"><p>replit部署的项目，如果长时间不访问会休眠，所以我们需要另一个监控来检测这个kuma，<a href="https://hexo.shangskr.top/posts/9.html" title="uptime-robot">uptime-robot</a></p>
+</div><br>文章摘自<a href="https://www.microcharon.top/tech/106.html" title="Microcharon">Microcharon</a></p>
+]]></content>
+      <categories>
+        <category>监控</category>
+      </categories>
+      <tags>
+        <tag>监控</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为hexo加一个朋友圈</title>
     <url>/posts/10.html</url>
     <content><![CDATA[<p><a href="https://fcircle-doc.yyyzyyyz.cn/" title="文章摘取地点">文章摘取地点</a><br>本人hexo朋友圈由<a href="https://blog.sinzmise.top/" title="`SZ・Ninty`"><code>SZ・Ninty</code></a>提供帮助完成！<br>特别感谢<a href="https://blog.sinzmise.top/" title="@SZ・Ninty">@SZ・Ninty</a>的帮助！<br><details class="folding-tag" cyan hide><summary> 心历路程 </summary>

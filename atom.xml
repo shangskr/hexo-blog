@@ -6,7 +6,7 @@
   <link href="https://hexo.shangskr.top/atom.xml" rel="self"/>
   
   <link href="https://hexo.shangskr.top/"/>
-  <updated>2023-08-06T06:17:29.160Z</updated>
+  <updated>2023-08-10T12:21:12.253Z</updated>
   <id>https://hexo.shangskr.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uptime-kuma它来了！</title>
+    <link href="https://hexo.shangskr.top/posts/11.html"/>
+    <id>https://hexo.shangskr.top/posts/11.html</id>
+    <published>2023-08-10T12:18:00.000Z</published>
+    <updated>2023-08-10T12:21:12.253Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="首先打开Replit官网"><a href="#首先打开Replit官网" class="headerlink" title="首先打开Replit官网"></a>首先打开<a href="https://replit.com/" title="Replit">Replit</a>官网</h2><p>首先点击 <code>Create a Repl</code> —&gt; <code>Import from GitHub</code>，填写作者的 <code>Repo URL</code> 地址，并更改语言为 <code>bash</code>，最后点击 <code>Import from GitHub</code> 进行部署<br>Repo URL 地址为<code>shangskr/uptime-kuma</code><br>kuma的<a href="https://github.com/shangskr/uptime-kuma" title="github">github</a>仓库<br>从 GitHub 上 Clone 成功后，配置文件 “.replit”（首次会出现在右上，后期可以在 File 选项卡中选择 “Show hidden files” 查看该配置文件），配置运行命令如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node server/server.js</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/1.webp" alt=""><br>此时暂不运行，在右侧的 Console 选项卡里输入，并选择第一个选项 nodejs-16_x.out 进行安装环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/2.webp" alt=""><br>键入 .exit 退出 node<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="built_in">exit</span></span><br></pre></td></tr></table></figure><br>继续输入 npm run setup，然后等待片刻即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run setup</span><br></pre></td></tr></table></figure><br><img src="https://b2.shangskr.top/uptime-kuma/3.webp" alt=""></p><h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><p>最后点击 “Run” 或是 “Ctrl+Enter” 来运行 Uptime-Kuma，若右上角处出现 Uptime-Kuma 创建账户页面，则配置成功<br><img src="https://b2.shangskr.top/uptime-kuma/4.webp" alt=""><br>最后创建一个管理员账号就可以了！<br>记得绑定域名哦~<br><div class="note warning simple"><p>replit部署的项目，如果长时间不访问会休眠，所以我们需要另一个监控来检测这个kuma，<a href="https://hexo.shangskr.top/posts/9.html" title="uptime-robot">uptime-robot</a></p></div><br>文章摘自<a href="https://www.microcharon.top/tech/106.html" title="Microcharon">Microcharon</a></p>]]></content>
+    
+    
+    <summary type="html">添加一个监控吧！</summary>
+    
+    
+    
+    <category term="监控" scheme="https://hexo.shangskr.top/categories/%E7%9B%91%E6%8E%A7/"/>
+    
+    
+    <category term="监控" scheme="https://hexo.shangskr.top/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>为hexo加一个朋友圈</title>
