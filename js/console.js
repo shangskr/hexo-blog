@@ -51,7 +51,7 @@ function createtime2() {
             "color:white; background-color:#10bcc0",
             "",
             "",
-            'background:url("https://npm.onmicrosoft.cn/anzhiyu-assets@latest/image/common/tinggge.gif ") no-repeat;font-size:450%'
+            'background:url("https://cdn.cbd.int/anzhiyu-assets@1.0.11/image/common/tinggge.gif") no-repeat;font-size:450%'
         )
     );
 

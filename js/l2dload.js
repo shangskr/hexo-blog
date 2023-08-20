@@ -54,8 +54,8 @@ const initConfig = {
   },
   night: "initConfig.switchDarkMode()",
   model: [
-    "https://jsd.onmicrosoft.cn/gh/journey-ad/blog-img/live2d/Diana/Diana.model3.json",
-    "https://jsd.onmicrosoft.cn/gh/journey-ad/blog-img/live2d/Ava/Ava.model3.json",
+    "https://live2d-jsd.shangskr.top/gh/journey-ad/blog-img/live2d/Diana/Diana.model3.json",
+    "https://live2d-jsd.shangskr.top/gh/journey-ad/blog-img/live2d/Ava/Ava.model3.json",
   ],
   tips: true,
   onModelLoad: onModelLoad
