@@ -1,16 +1,18 @@
 #bbTimeList {
-  background: var(--anzhiyu-white);
-  color: var(--anzhiyu-fontcolor);
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  box-shadow: var(--anzhiyu-shadow-lightblack);
-  display: flex;
-  transition: all 0.3s ease 0s;
-  margin: 1rem auto 0;
-  border: 3px solid #19a5c1;
-  align-items: center;
-  height: 32px;
-  width: 100%;
+background: var(--anzhiyu-white);
+    color: var(--anzhiyu-fontcolor);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: var(--anzhiyu-shadow-lightblack);
+    display: flex;
+    transition: all 0.3s ease 0s;
+    margin: 1rem auto 0;
+    border: 3px solid #19a5c1;
+    align-items: center;
+    width: 75%;
+    padding: 8px 10px;
+    max-width: 1170px;
+    width: 97%;
 }
 [data-theme="dark"] #bbTimeList,[data-theme="dark"] #category-bar {
   background: #000 !important;

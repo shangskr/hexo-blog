@@ -384,7 +384,7 @@ h6::before {
   }
 
   /* 所有卡片线框式 */
-  .card-widget,#rightside-config-hide button,#rightside-config-show button,.recent-post-item,#archive,#page,#post,#category-bar,.page-number{
+  .card-widget,#rightside-config-hide button,#rightside-config-show button,.recent-post-item,#archive,#page,#post,#category-bar,.page-number,#textnumer{
 border: 3px solid #19a5c1;
 }
 #rightside-config-hide button,#rightside-config-show button{
