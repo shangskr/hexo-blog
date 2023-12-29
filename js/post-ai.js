@@ -41,8 +41,8 @@ function ChucklePostAI(AI_option) {
       return;
     };
     const interface = {
-      name: "安小歪-AI",
-      introduce: "我是文章辅助AI: 安小歪-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。",
+      name: "AXY-AI",
+      introduce: "我是文章辅助AI: AXY-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。",
       version: "GPT-4",
       button: ["介绍自己", "推荐相关文章", "生成AI简介", "矩阵穿梭"],
       ...AI_option.interface
@@ -775,7 +775,7 @@ function ChucklePostAI(AI_option) {
     
     // 插入css
     function insertCSS(){
-      const styleId = 'qx-ai-style';
+      const styleId = 'axy-ai-style';
       if(document.getElementById(styleId)) { return; }
       const styleElement = document.createElement('style');
       styleElement.id = styleId;
