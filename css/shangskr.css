@@ -520,3 +520,87 @@ border: 3px solid #19a5c1;
   height: 240px;
     vertical-align: middle
 }
+
+#recent-posts>.recent-post-item {
+    position: relative;
+}
+
+/* 最新文章图标 */
+.newPost-left, .newPost-right {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    color: rgba(255, 255, 255, .92);
+    padding: 0 15px;
+    background-color: #49b0f5b9;
+    border-radius: 0 0 10px 10px;
+}
+
+.newPost-left {
+    left: 15px;
+}
+
+.newPost-right {
+    right: 15px;
+}
+/* 最近更新图标 */
+.updatePost-left, .updatePost-right {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    color: rgba(255, 255, 255, .92);
+    padding: 0 15px;
+    background-color: #25d8b1b9;
+    border-radius: 0 0 10px 10px;
+}
+
+.updatePost-left {
+    left: 15px;
+}
+
+.updatePost-right {
+    right: 15px;
+}
+
+@media screen and(max-width: 600px) {
+    #nav {
+        padding: 0 15px 0 11px;
+    }
+
+    #nav #blog_name {
+        margin-left: -6.5px !important;
+    }
+
+    .newPost-left, .newPost-right {
+        padding: 0 12px;
+    }
+
+    .newPost-left {
+        left: 0;
+        border-radius: 10px 0 10px 0;
+    }
+
+    .newPost-right {
+        right: 0;
+        border-radius: 0 10px 0 10px;
+    }
+
+    .recent-post-item .recent-post-content .recent-post-info .recent-post-meta {
+        padding: 0 5px 0 5px;
+        margin-top: -7px;
+    }
+
+    .updatePost-left, .updatePost-right {
+        padding: 0 12px;
+    }
+
+    .updatePost-left {
+        left: 0;
+        border-radius: 10px 0 10px 0;
+    }
+
+    .updatePost-right {
+        right: 0;
+        border-radius: 0 10px 0 10px;
+    }
+}
