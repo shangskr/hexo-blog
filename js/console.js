@@ -21,7 +21,7 @@ function createtime1() {
         "小站已经苟活",
         dnum,
         "天啦!",
-        "©2022 By 安小歪",
+        "©2022~2024 By 安小歪",
     ];
 
     setTimeout(
