@@ -1,6 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>用serv00部署Alist以及其它项目</title>
+    <url>/posts/14.html</url>
+    <content><![CDATA[<p>原作者链接 <a class="btn-beautify " href="https://blog.rappit.site/" 
+  title="Saika's Blog"><i class="orange larger"></i><span>Saika's Blog</span></a><br><a href="https://www.serv00.com/" title="serv00">serv00</a>是一个提供免费的Virtual Host的平台，其托管平台使用的是FreeBSD系统，并不是Linux。每个账号有效期10年，超过三个月不登入Panel以及SSH则会被删除账号。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>Serv00 免费提供</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储空间</td>
+<td>3 GB</td>
+</tr>
+<tr>
+<td>每月流量</td>
+<td>unlimited</td>
+</tr>
+<tr>
+<td>网站数量</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>3</td>
+</tr>
+<tr>
+<td>MongoDB</td>
+<td>3</td>
+</tr>
+<tr>
+<td>GIT/SVN/HG 仓库</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TCP/UDP端口</td>
+<td>3</td>
+</tr>
+<tr>
+<td>PHP解释器</td>
+<td>3</td>
+</tr>
+<tr>
+<td>系统进程</td>
+<td>15</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>512MB</td>
+</tr>
+<tr>
+<td>备份</td>
+<td>7天</td>
+</tr>
+<tr>
+<td>服务器放置</td>
+<td>欧盟</td>
+</tr>
+<tr>
+<td>免费子域名</td>
+<td><a href="login.serv00.net">login.serv00.net</a></td>
+</tr>
+<tr>
+<td>技术支持</td>
+<td>只有论坛</td>
+</tr>
+<tr>
+<td>SLA</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>现代技术</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>SSH访问</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>SSH隧道</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>远程数据库访问</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>固态硬盘</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>没有广告</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>免费</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="folding-tag" ><summary> Alist详细部署记录 </summary>
+              <div class='content'>
+              <h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>首先去serv00的官网<a href="https://www.serv00.com/offer/create_new_account" title="注册一个账号">注册一个账号</a>，最好不要使用国内邮箱，注册信息请尽可能真实填写。(What is the cost of hosting on serv00.com?这一项填0/free)<br>接着你可以在邮箱里收到你的注册信息的邮件；邮件最末有Panel的入口地址和<a href="https://docs.serv00.com/" title="文档链接">文档链接</a>以及<a href="https://forum.serv00.com/" title="论坛链接">论坛链接</a>，接下来登入Panel进行操作：<br>1.首先去左侧的Additional Service选项卡中，找到Run your own applications选项，将其设置为允许<br>2.接着去Port reservation选项卡，使用Add port功能，随机添加一个TCP端口<br>接着使用SSH登入到你的账户，我使用的SSH客户端是<a href="https://termius.com/" title="Termius">Termius</a></p><h2 id="部署Alist"><a href="#部署Alist" class="headerlink" title="部署Alist"></a>部署Alist</h2><p><a href="https://github.com/alist-org/alist" title="Alist的官方仓库">Alist的官方仓库</a>并没有提供FreeBSD版本的可执行文件构筑，Alist构筑FreeBSD版本的<a href="https://github.com/shangskr/alist-freebsd" title="仓库">仓库</a><br>Serv00本身提供的网站托管在<code>~/domains</code>路径下，所以我建议把Alist也部署到这个路径下的子目录：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/domains/alist &amp;&amp; cd ~/domains/alist </span><br></pre></td></tr></table></figure><br>接着下载目前<code>shangskr/alist-freebsd</code><br>提供的最新版的Alist的可执行二进制文件构筑：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/shangskr/alist-freebsd/releases/download/v3.30.0/alist &amp;&amp; chmod +x alist</span><br></pre></td></tr></table></figure><br>然后需要先启动一次Alist以生成配置文件，此次启动一定会失败，请不用在意<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./alist server</span><br></pre></td></tr></table></figure><br>接着回到Panel中，找到MySQL选项卡，使用Add database功能新建一个数据库：<br>(密码要求含有大写字母、小写字母和数字三种字符，且长度必须超过6个字符。)<br>接下来进入File manager选项卡，进入<code>~/domains/alist/data</code>径，可以看到一个名为<code>config.json</code>的文件，右键点击，选择View/Edit &gt; Source Editor，进行编辑：<br><img src="https://b2.shangskr.top/serv00%E5%9B%BE%E6%96%87/01.webp" alt=""><br>修改CDN、database、scheme三个部分<br>CDN:<a href="https://jsd.onmicrosoft.cn/npm/alist-web@$version/dist/">https://jsd.onmicrosoft.cn/npm/alist-web@$version/dist/</a><br>(版本号的话自己指定，不指定有可能加载不出来页面)<br>database部分，type需要改成<code>mysql</code>，host填写你在注册邮件中看到的mysql的地址，port是默认的3306，用户名、密码、数据库名则按照你创建的情况进行填写。<br>scheme部分，修改adress为127.0.0.1本地回环，是为了避免被他人使用<code>http://ip:port</code> 的方式进行访问。至于自己怎么访问，本文后面的部分会进行介绍。<code>http_port</code>要改成自己前面放行的端口。<br>改完之后，点击save保存，接着回到SSH窗口中进行操作。<br>先启动一次，查看运行是否正常：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./alist server</span><br></pre></td></tr></table></figure><br>运行正常，记得把管理员用户的密码记住。接着使用Ctrl+c停止运行。</p><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>此时还没有访问Alist的方法，因为监听的地址是本地回环，所以需要将其反向代理出来。我选择使用Cloudflare提供的Argo通道，顺带给Alist绑定自己的域名。<br>Cloudflared官方仓库没有提供FreeBSD平台的客户端，但是和Alist一样的，我找到了Unofficial的FreeBSD版本的<a href="https://cloudflared.bowring.uk/" title="构筑">构筑</a>，接下来使用它打隧道：<br>新建并进入Cloudflared的工作目录：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/domains/cloudflared &amp;&amp; cd ~/domains/cloudflared</span><br></pre></td></tr></table></figure><br>下载Cloudflared：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://cloudflared.bowring.uk/binaries/cloudflared-freebsd-2023.10.0.7z &amp;&amp; 7z x cloudflared-freebsd-2023.10.0.7z &amp;&amp; rm cloudflared-freebsd-2023.10.0.7z &amp;&amp; mv -f ./temp/cloudflared-freebsd-2023.10.0 ./cloudflared &amp;&amp; rm -rf temp</span><br></pre></td></tr></table></figure><br>然后在<a href="https://one.dash.cloudflare.com/" title="Cloudflare的面板">Cloudflare的面板</a>中，找到Networks分类下的Tunnels功能，点击Create a tunnel，选择Cloudflared，Next，随便取个名字，Next，往下翻，可以看到Run the following command，然后给了一串命令，将其复制出来，大概是这样的：<br><code>cloudflared.exe service install eyJhIjoiNzh...............V5TWpBeSJ9</code><br>前面的不需要管，只需要保留最后ey开头的那串很长的TOKEN，去SSH中测试运行Cloudflared：<br><code>./cloudflared tunnel --edge-ip-version auto --protocol http2 --heartbeat-interval 10s run --token eyJhIjoiNzh...............V5TWpBeSJ9</code><br>（记得把最后的那一串替换成你的TOKEN。）<br>接着回到Cloudflare的面板，继续点击Next，然后添加一个自己的域名，Service中，Type选择HTTP，URL填写localhost:PORT，其中PORT为你的Alist对应的端口。点击Save Tunnel后，可以看到自己新建的Tunnel上线。<br>接着使用Ctrl+c停止运行。然后安装进程管理工具pm2：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -s https://raw.githubusercontent.com/shangskr/alist_repl/main/serv00/install-pm2.sh)</span><br></pre></td></tr></table></figure><br>然后使用pm2启动Cloudflared：<br><code>~/.npm-global/bin/pm2 start ./cloudflared -- tunnel --edge-ip-version auto --protocol http2 --heartbeat-interval 10s run --token eyJhIjoiNzh...............V5TWpBeSJ9</code><br>(记得把最后的那一串替换成你的TOKEN。)<br>再启动Alist：<br><code>cd ~/domains/alist &amp;&amp; ~/.npm-global/bin/pm2 start ./alist -- server</code><br>到这里，就可以直接通过你的域名访问刚刚部署的Alist了。</p><h2 id="收尾工作"><a href="#收尾工作" class="headerlink" title="收尾工作"></a>收尾工作</h2><p>听说Serv00会不定时重启机器，所以我们把pm2添加开机自启，可以保证每次重启都能由pm2调动Alist和Cloudflared。而且Serv00每三个月内必须要有一次登录面板或者SSH连接，不然会删号，也可以通过一个脚本解决问题，接下来我会详细说明。</p><h2 id="自动定时SSH"><a href="#自动定时SSH" class="headerlink" title="自动定时SSH"></a>自动定时SSH</h2><p>在Panel中找到File manager选项卡，进入alist所在的路径，然后找到上方Send按钮左边的+，选择New empty file，文件名命名为<code>auto-renew.sh</code>， 右键点击<code>auto-renew.sh</code>，选择View/Edit &gt; Source Editor，进行编辑，把下面的代码块的内容都复制进去：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span></span><br><span class="line">  sshpass -p <span class="string">&#x27;密码&#x27;</span> ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -tt 用户名@地址 <span class="string">&quot;exit&quot;</span> &amp;</span><br><span class="line">  <span class="built_in">sleep</span> 259200  <span class="comment">#30天为259200秒</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><br>(记得把其中的密码、用户名、ssh的地址修改为你自己的。)<br>保存后回到SSH中，进入<code>auto-renew.sh</code> 所在的路径，并使用pm2管理运行它：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  ~/domains/alist &amp;&amp; <span class="built_in">chmod</span> +x auto-renew.sh &amp;&amp; ~/.npm-global/bin/pm2 start ./auto-renew.sh</span><br></pre></td></tr></table></figure><br>这样就会每隔一个月自动执行一次SSH连接，自己SSH自己进行续期。</p><h2 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h2><p>在Panel中找到Cron jobs选项卡，使用Add cron job功能添加任务：<br><img src="https://b2.shangskr.top/serv00%E5%9B%BE%E6%96%87/02.webp" alt=""><br>Specify time选择After reboot，即为重启后运行。Form type选择Advanced，Command写：<br><code>/home/你的用户名/.npm-global/bin/pm2 resurrect</code><br>(记得把你的用户名改为你的用户名)<br>添加完之后，在SSH窗口保存pm2的当前任务列表快照：<br><code>~/.npm-global/bin/pm2 save</code><br>这样每次serv00不定时重启任务时，都能自动调用pm2读取保存的任务列表快照，恢复任务列表。</p>
+              </div>
+            </details>
+<h1 id="下面是saika的更多玩法"><a href="#下面是saika的更多玩法" class="headerlink" title="下面是saika的更多玩法"></a>下面是<a href="https://blog.rappit.site/" title="saika">saika</a>的更多玩法</h1><p>serv00的<a href="https://docs.serv00.com/" title="文档">文档</a>中有搭建网站的示例，示例就有WordPress文档中还详细介绍了Redis、Memcached、Imapsync、WP-CLI、Tomcat等服务的搭建方法</p>
+<details class="folding-tag" ><summary> KodBox </summary>
+              <div class='content'>
+              <p>虽然Serv00能够部署KodBox，但是实在是不太好用。最直观的感受就是卡，因为KodBox运行期间需要调用多个PHP组件，而Serv00限制同时处理三个PHP进程，所以显得特别慢。其次，Serv00没有Root权限，部分PHP插件没有安装，也无法安装，导致有一些KodBox的插件无法正常运行。<br>进入PHP网站路径：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/domains/用户名.serv00.net/public_html/</span><br></pre></td></tr></table></figure><br>安装KodBox：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -s https://pan.rappit.site/d/shell/kodbox1.49/serv00-kodbox-install.sh)</span><br></pre></td></tr></table></figure><br>然后去Panel中的MySQL选项卡，新建数据库和用户，用以接入KodBox。再去WWW Websites选项卡中找到用户名.serv00.net，点击右侧的Manage &gt; Details进入设置，把GZIP compression、Allow PHP eval() function、Allow PHP exec() function三个功能打开。<br>再打开 <code>https://用户名.serv00.net/</code>进行KodBox的安装，数据库填写你刚刚新建的数据库即可。初次启动需要较长的时间，请耐心等待。<br>如果你看明白了面板的功能，也可以使用自己的域名或者子域部署kodbox，这里仅用<code>https://用户名.serv00.net/</code>举例。<br>上面的应用不需要占用端口。<br>下面的应用每一个都需要占用端口。</p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Vless </summary>
+              <div class='content'>
+              <p>创建并进入vless工作路径，并克隆源仓库：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/domains &amp;&amp; git <span class="built_in">clone</span> https://github.com/qwer-search/serv00-vless &amp;&amp; <span class="built_in">mv</span> -f serv00-vless vless &amp;&amp; <span class="built_in">cd</span> vless &amp;&amp; <span class="built_in">rm</span> -f README.md</span><br></pre></td></tr></table></figure><br>在Panel中Port Reservation选项卡中放行一个TCP端口，随机即可，记住端口号。</p><p>使用vim编辑或者直接去Panel中的File Manager选项卡在线编辑app.js文件，修改端口为刚刚放行的端口。<br>安装依赖：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br>安装完毕后，使用pm2启动并守护vless进程：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start app.js --name vless</span><br></pre></td></tr></table></figure><br>接着去你的代理客户端软件中手动添加vless配置即可：（下表没有给出的可以不填。）</p><div class="table-container"><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>地址</td><td>Panel中WWW Websites选项卡里的你的Domain name</td></tr><tr><td>端口</td><td>你放行的端口</td></tr><tr><td>用户id</td><td>37a0bd7c-8b9f-4693-8916-bd1e2da0a817</td></tr><tr><td>传输协议</td><td>ws</td></tr><tr><td>伪装域名</td><td>同地址</td></tr><tr><td>ws path</td><td>/</td></tr></tbody></table></div>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Alist </summary>
+              <div class='content'>
+              <p>Alist官方仓库没有构筑FreeBSD系统下能够运行的Alist可执行文件，但是我在Github上发现了一个使用Github Workflow自动构筑FreeBSD适用的Alist的<a href="https://github.com/shangskr/alist-freebsd" title="仓库">仓库</a>，使用这个仓库就可以很便利的在Serv00上部署Alist。<br>新建并进入Alist的工作目录：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/domains/alist &amp;&amp; cd ~/domains/alist </span><br></pre></td></tr></table></figure><br>接着下载目前<code>shangskr/alist-freebsd</code><br>提供的最新版的Alist的可执行二进制文件构筑：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/shangskr/alist-freebsd/releases/download/v3.30.0/alist &amp;&amp; chmod +x alist</span><br></pre></td></tr></table></figure><br>然后需要先启动一次Alist以生成配置文件，此次启动一定会失败，请不用在意<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./alist server</span><br></pre></td></tr></table></figure><br>接着回到Panel中，找到MySQL选项卡，使用Add database功能新建一个数据库：<br>(密码要求含有大写字母、小写字母和数字三种字符，且长度必须超过6个字符。)<br>接下来进入File manager选项卡，进入<code>~/domains/alist/data</code>径，可以看到一个名为<code>config.json</code>的文件，右键点击，选择View/Edit &gt; Source Editor，进行编辑：<br><img src="https://b2.shangskr.top/serv00%E5%9B%BE%E6%96%87/01.webp" alt=""><br>修改CDN、database、scheme三个部分<br>CDN:<a href="https://jsd.onmicrosoft.cn/npm/alist-web@$version/dist/">https://jsd.onmicrosoft.cn/npm/alist-web@$version/dist/</a><br>(版本号的话自己指定，不指定有可能加载不出来页面)<br>database部分，type需要改成<code>mysql</code>，host填写你在注册邮件中看到的mysql的地址，port是默认的3306，用户名、密码、数据库名则按照你创建的情况进行填写。<br>scheme部分，修改adress为127.0.0.1本地回环，是为了避免被他人使用<code>http://ip:port</code> 的方式进行访问。至于自己怎么访问，本文后面的部分会进行介绍。<code>http_port</code>要改成自己前面放行的端口。<br>改完之后，点击save保存，接着回到SSH窗口中进行操作。<br>先启动一次，查看运行是否正常：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./alist server</span><br></pre></td></tr></table></figure><br>运行正常，记得把管理员用户的密码记住。接着使用Ctrl+c停止运行。<br>你可以选择使用面板中的 Proxy 功能添加域名，或者 Cloudflared 隧道添加域名。</p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Synctv </summary>
+              <div class='content'>
+              <p>因为用koyeb部署这个项目把我Koyeb账号封了所以没办法玩了，我想到了serv00于是通过仿照alist-freebsd的仓库的workflow进行构筑的<br>首先放行一个端口，然后创建并进入 synctv 的工作目录：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/domains/synctv &amp;&amp; <span class="built_in">cd</span> ~/domains/synctv</span><br></pre></td></tr></table></figure><br>下载可执行文件：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">release_info=$(curl -s https://api.github.com/repos/shangskr/synctv-freebsd/releases/latest)</span><br><span class="line">asset_url=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$release_info</span>&quot;</span> | jq -r <span class="string">&#x27;.assets[] | select(.name != &quot;source code&quot;) | .browser_download_url&#x27;</span>)</span><br><span class="line">curl -L -o synctv <span class="string">&quot;<span class="variable">$asset_url</span>&quot;</span> &amp;&amp; <span class="built_in">chmod</span> +x synctv</span><br></pre></td></tr></table></figure><br>新建启动脚本：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> start.sh &amp;&amp; <span class="built_in">chmod</span> +x start.sh</span><br></pre></td></tr></table></figure><br>接着在Panel中进入File manager选项卡，进入synctv的工作目录，找到 <code>start.sh</code>文件，右键选择View/Edit &gt; Choose other &gt;Source Editor进行编辑，填入以下内容：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不希望被使用 http://ip:port 的方式访问，取消注释下一行</span></span><br><span class="line"><span class="comment"># export SYNCTV_SERVER_LISTEN=127.0.0.1</span></span><br><span class="line"><span class="comment"># 把下一行的最末的PORT改成自己放行的端口</span></span><br><span class="line"><span class="built_in">export</span> SYNCTV_SERVER_PORT=PORT</span><br><span class="line">./synctv server --data-dir ./</span><br></pre></td></tr></table></figure><br>保存后回到 terminal 中，给予权限<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x synctv</span><br></pre></td></tr></table></figure><br>测试运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./start.sh</span><br></pre></td></tr></table></figure><br>确定运行没有问题后，按 Ctrl+c即可停止运行。<br>使用pm2启动并管理：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start ./start.sh --name synctv</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> One-api </summary>
+              <div class='content'>
+              <p>源仓库没有提供freebsd平台的二进制文件，需要自己构建，但是很简单。先在面板中放行一个端口。<br>新建并进入one-api的工作目录：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/domains/one-api &amp;&amp; <span class="built_in">cd</span> ~/domains/one-api</span><br></pre></td></tr></table></figure><br>进行构建：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载源代码</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/songquanpeng/one-api</span><br><span class="line"><span class="comment"># 构建前端</span></span><br><span class="line"><span class="built_in">cd</span> one-api/web/default</span><br><span class="line">npm install</span><br><span class="line">npm run build</span><br><span class="line"><span class="comment"># 构建后端</span></span><br><span class="line"><span class="built_in">cd</span> ../..</span><br><span class="line">go mod download</span><br><span class="line">go build -ldflags <span class="string">&quot;-s -w&quot;</span> -o one-api</span><br><span class="line"><span class="built_in">chmod</span> u+x one-api</span><br><span class="line"><span class="comment"># 清理文件</span></span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; <span class="built_in">mv</span> -f one-api/one-api ./temp</span><br><span class="line"><span class="built_in">rm</span> -rf one-api</span><br><span class="line"><span class="built_in">mv</span> -f temp one-api</span><br></pre></td></tr></table></figure><br>新建启动脚本：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> start.sh &amp;&amp; <span class="built_in">chmod</span> +x start.sh</span><br></pre></td></tr></table></figure><br>接着在Panel中进入File manager选项卡，进入one-api的工作目录，找到 <code>start.sh</code>文件，右键选择View/Edit &gt; Choose other &gt;Source Editor进行编辑，填入以下内容：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> TIKTOKEN_CACHE_DIR=<span class="string">&quot;<span class="variable">$PWD</span>&quot;</span></span><br><span class="line"><span class="comment"># 把下一行的 PORT 改为自己放行的端口</span></span><br><span class="line">./one-api --port PORT --log-dir ./logs</span><br></pre></td></tr></table></figure><br>保存后回到 terminal 中，测试运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./start.sh</span><br></pre></td></tr></table></figure><br>确定运行没有问题后，按 Ctrl+c即可停止运行。<br>使用pm2启动并管理：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start ./start.sh --name one-api</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Uptime-Kuma </summary>
+              <div class='content'>
+              <p>受限于FreeBSD的平台限制，1.23版本内置了PlayWright，无法运行，所以只能安装1.22版本。切记先去Panel中放行TCP端口。<br>下载1.22.1版本源代码并进入工作路径：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/domains &amp;&amp; wget https://github.com/louislam/uptime-kuma/archive/refs/tags/1.22.1.zip &amp;&amp; unzip 1.22.1.zip &amp;&amp; <span class="built_in">mv</span> -f uptime-kuma-1.22.1 kuma &amp;&amp; <span class="built_in">rm</span> -f 1.22.1.zip &amp;&amp; <span class="built_in">cd</span> kuma</span><br></pre></td></tr></table></figure><br>设置生产模式：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm ci --production</span><br></pre></td></tr></table></figure><br>下载dist文件：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/louislam/uptime-kuma/releases/download/1.22.1/dist.tar.gz &amp;&amp; tar -xzvf dist.tar.gz &amp;&amp; <span class="built_in">rm</span> dist.tar.gz</span><br></pre></td></tr></table></figure><br>安装补充依赖：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br>安装过程中多少会有报错，无视就好，实际上最后可以正常运行。内置的Cloudflared反向代理在FreeBSD平台上无法使用，但是可以使用上述的外置的Cloudflared进行反代，使用自己的域名。<br>测试运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node server/server.js --port=PORT</span><br></pre></td></tr></table></figure><br>记得把PORT替换成你放行的端口。确定运行没有问题后，按 Ctrl+c即可停止运行<br>使用pm2管理后台运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start server/server.js --name uptime-kuma -- --port=PORT</span><br></pre></td></tr></table></figure><br>记得把PORT替换成你放行的端口。<br>如果你不希望自己的Uptime-Kuma被人使用 <code>http://IP:PORT</code>的方式访问，你可以在最后的执行命令添加 —host=127.0.0.1的尾缀，这样就只能通过反向代理的域名进行访问了:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start server/server.js --name uptime-kuma -- --port=PORT --host=127.0.0.1</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Bingo </summary>
+              <div class='content'>
+              <p>先放行一个端口。在Panel中进入File manager选项卡，点击左侧的My Files进入你的用户根目录，找到 <code>.bashrc</code>文件，右键选择View/Edit &gt; Choose other &gt;Source Editor进行编辑，在最末加上以上两行并保存：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> node=<span class="string">&#x27;node20&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> npm=<span class="string">&#x27;npm20&#x27;</span></span><br></pre></td></tr></table></figure><br>应用更改：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><br>先新建一个目录用于存放halo的相关文件，进入目录后执行下述操作。<br>下载源码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/weaigc/bingo</span><br></pre></td></tr></table></figure><br>进入源码所在目录：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> bingo</span><br></pre></td></tr></table></figure><br>安装依赖：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm20 install</span><br></pre></td></tr></table></figure><br>下载build好的 <code>.next</code>资源：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -O next.tar.gz https://pan.saika.free.hr/d/local/next.tar.gz &amp;&amp; tar -xzvf next.tar.gz &amp;&amp; <span class="built_in">rm</span> next.tar.gz</span><br></pre></td></tr></table></figure><br>添加环境变量文件：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br></pre></td></tr></table></figure><br>接着在Panel中进入File manager选项卡，进入Bingo源码所在的目录，找到 <code>server.js</code>文件，右键选择View/Edit &gt; Choose other &gt;Source Editor进行编辑，修改第7行中的端口为你放行的端口。再编辑 <code>.env</code>文件，添加你的 <code>BING_HEADER</code>。<br>测试启动：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm20 run start</span><br></pre></td></tr></table></figure><br>确定运行没有问题后，按 Ctrl+c即可停止运行。<br>使用pm2启动并管理：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start npm --name bingo -- run start</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Refresh-gpt-chat </summary>
+              <div class='content'>
+              <p>创建并进入 refresh-gpt-chat 的工作目录：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/domains/refresh-gpt-chat &amp;&amp; <span class="built_in">cd</span> ~/domains/refresh-gpt-chat</span><br></pre></td></tr></table></figure><br>下载refresh-gpt-chat：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本文成文时，refresh-gpt-chat的最新版本为0.0.3</span></span><br><span class="line">wget -O refresh-gpt-chat.jar https://github.com/Yanyutin753/refresh-gpt-chat/releases/download/v0.0.3/refresh-gpt-chat-0.0.3-SNAPSHOT.jar</span><br></pre></td></tr></table></figure><br>使用 pm2 启动：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start java19 --name refresh-gpt-chat -- -jar refresh-gpt-chat.jar --server.port=端口 --server.servlet.context-path=/ --getAccessTokenUrl=https://你的ninja地址/auth/refresh_token --chatUrl=https://你的ninja地址/v1/chat/completions</span><br></pre></td></tr></table></figure><br>再套域名，接下来就可以直接使用 <code>https://你套的域名/v1/chat/completions/</code> 当作API端点，使用 <code>refresh_token</code> 做 API_Keys ，使用 ChatGPT 了。</p><p>然后在one-api中添加自定义渠道， <code>Base URL</code> 填写你 <code>https://你套的域名</code>，模型填入你的refresh_token对应的账号所支持的模型，如果和我一样手持大把 3.5 的账号想用来做 API 用，可以选择全部GPT3.5的相关模型，然后在<code>模型重定向</code>中填入以下内容：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-0301&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-0613&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-16k&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-16k-0613&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-1106&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span>,</span><br><span class="line">  <span class="string">&quot;gpt-3.5-turbo-instruct&quot;</span>: <span class="string">&quot;gpt-3.5-turbo&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>密钥填写你的<code>refresh_token</code>即可，如果你有多个账号，可以将批量勾选上，然后一行写一个<code>refresh_token</code>。</p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> gpt4-copilot-java </summary>
+              <div class='content'>
+              <p>支持 cocopilot 的 ccu 和 copilot 的 ghu 调用 copilot 转 GPT-4 的接口转换工具。 Java 写的，可以在 Serv00 运行。依旧是在 Panel 中先开放端口。</p><p>新建并进入 gpt4-copilot-java 的工作目录：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/domains/gpt4-copilot-java &amp;&amp; <span class="built_in">cd</span> ~/domains/gpt4-copilot-java</span><br></pre></td></tr></table></figure><br>下载 fat jar 包：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">RELEASE_INFO=$(curl -s <span class="string">&quot;https://api.github.com/repos/Yanyutin753/gpt4-copilot-java-sh/releases/latest&quot;</span>)</span><br><span class="line">JAR_DOWNLOAD_URL=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$RELEASE_INFO</span>&quot;</span> | jq -r <span class="string">&#x27;.assets[] | select(.name|test(&quot;.jar$&quot;)) | .browser_download_url&#x27;</span>)</span><br><span class="line">curl -L -o gpt4-copilot-java.jar <span class="string">&quot;<span class="variable">$JAR_DOWNLOAD_URL</span>&quot;</span></span><br></pre></td></tr></table></figure><br>测试运行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 把PORT改为自己放行的端口，最后的server.servlet.context-path参数可以改成自己喜欢的尾缀</span></span><br><span class="line">java19 -jar gpt4-copilot-java.jar --server.port=PORT --server.servlet.context-path=/</span><br></pre></td></tr></table></figure><br>测试没有问题之后，按 Ctrl+c即可停止运行。<br>使用 pm2 启动并管理：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start java19 --name gpt4-copilot-java -- -jar gpt4-copilot-java.jar --server.port=PORT --server.servlet.context-path=/</span><br></pre></td></tr></table></figure><br><code>始皇的公车：ghu_ThisIsARealFreeCopilotKeyByCoCopilot</code><br>免费公车白嫖请求示例：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl --location <span class="string">&#x27;http(s)://ip:port_or_URL/cocopilot/v1/chat/completions&#x27;</span> </span><br><span class="line">--header <span class="string">&#x27;Content-Type: application/json&#x27;</span> </span><br><span class="line">--header <span class="string">&#x27;Authorization: Bearer ghu_ThisIsARealFreeCopilotKeyByCoCopilot&#x27;</span> </span><br><span class="line">--data <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">&quot;model&quot;: &quot;gpt-4&quot;,</span></span><br><span class="line"><span class="string">&quot;messages&quot;: [&#123;&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;鲁迅打周树人&quot;&#125;]</span></span><br><span class="line"><span class="string">&#125;&#x27;</span></span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Zfile </summary>
+              <div class='content'>
+              <p>同理，先放行端口。然后新建并进入zfile的工作路径：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/domains/zfile &amp;&amp; <span class="built_in">cd</span> ~/domains/zfile</span><br></pre></td></tr></table></figure><br>下载 fat jar 包：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate -O zfile.jar https://c.jun6.net/ZFILE/zfile-release.jar</span><br></pre></td></tr></table></figure><br>测试运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java19 -jar -Duser.timezone=Asia/Shanghai zfile.jar --zfile.log.path=<span class="variable">$PWD</span>/logs --zfile.db.path=<span class="variable">$PWD</span>/zfile --server.port=PORT</span><br></pre></td></tr></table></figure><br>记得把端口改成自己的。测试没有问题之后，按 Ctrl+c即可停止运行。<br>使用pm2启动并管理：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start java19 --name zfile -- -jar -Duser.timezone=Asia/Shanghai zfile.jar --zfile.log.path=<span class="variable">$PWD</span>/logs --zfile.db.path=<span class="variable">$PWD</span>/zfile --server.port=PORT</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> Halo </summary>
+              <div class='content'>
+              <p>慎重部署，内存会超100%，不知道会不会封号<br><a href="https://github.com/halo-dev/halo" title="halo">halo</a>自从升级2.0版本开始，很长时间内都没有提供构筑好的jar包，甚至于在GitHub上都出现了第三方的，使用GitHub workflow自动化构筑jar包的<a href="https://github.com/Lu7fer/Jar4Halo" title="仓库">仓库</a>但是，自从<a href="https://github.com/halo-dev/halo/releases/tag/v2.12.0-alpha.1" title="2.12.0-alpha.1版本">2.12.0-alpha.1版本</a>开始，halo的官方仓库又开始提供构筑好的jar包了.<br>先放行一个端口，并新建一个目录用于存放halo的相关文件，进入目录后执行下述操作。<br>下载jar包：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -O halo.jar https://github.com/halo-dev/halo/releases/download/v2.12.0/halo-2.12.0.jar</span><br></pre></td></tr></table></figure><br>在面板中新建MySQL数据库，用于填入 <code>application.yaml</code>，<code>application.yaml</code>的全部内容：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 你在面板中放行的端口</span><br><span class="line">  <span class="comment"># Response data gzip.</span></span><br><span class="line">  compression:</span><br><span class="line">    enabled: <span class="literal">false</span></span><br><span class="line">spring:</span><br><span class="line">  <span class="comment">#sql:</span></span><br><span class="line">  <span class="comment">#  init.platform: mysql</span></span><br><span class="line">  r2dbc:</span><br><span class="line">    url: r2dbc:pool:mysql://数据库地址:3306/数据库名</span><br><span class="line">    username: 数据库用户名</span><br><span class="line">    password: 数据库密码</span><br><span class="line">halo:</span><br><span class="line">  <span class="comment"># Your admin client path is https://your-domain/&#123;admin-path&#125;</span></span><br><span class="line">  admin-path: admin</span><br><span class="line">  <span class="comment"># memory or level</span></span><br><span class="line">  cache: level</span><br></pre></td></tr></table></figure><br>在 <code>halo.jar</code>所在路径下新建 <code>.halo2</code>文件夹，进入其中，新建文件 <code>application.yaml</code>然后把上述内容填入其中。<br>在 <code>halo.jar</code>所在路径下新建 <code>run.sh</code>运行脚本，其全部内容为：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">export</span> HALO_WORK_DIR=<span class="string">&quot;<span class="variable">$PWD</span>/.halo2&quot;</span></span><br><span class="line"><span class="built_in">export</span> HALO_EXTERNAL_URL=<span class="string">&quot;https://你的域名&quot;</span></span><br><span class="line">java17 -server -Xms128m -Xmx256m -jar -Duser.timezone=Asia/Shanghai <span class="variable">$PWD</span>/halo.jar --spring.config.additional-location=<span class="variable">$PWD</span>/.halo2/application.yaml</span><br></pre></td></tr></table></figure><br>测试运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x run.sh &amp;&amp; ./run.sh</span><br></pre></td></tr></table></figure><br>确定运行没有问题后，按 Ctrl+c即可停止运行。<br>使用pm2管理运行：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x run.sh &amp;&amp; ~/.npm-global/bin/pm2 start ./run.sh --name halo</span><br></pre></td></tr></table></figure></p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> 自动续期 </summary>
+              <div class='content'>
+              <p>可以用青龙面板的自动任务定期登录SSH解决。在青龙面板中添加Linux依赖 <code>sshpass</code>，然后添加定时任务：名称随意，命令/脚本 <code>sshpass -p &#39;密码&#39; ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -tt 用户名@地址 &quot;exit&quot;</code>，定时规则<code>1 1 1 * *</code>。这样就会每个月自动ssh连接一次，实现续期。<br>你还可以使用自身SSH自身的方式进行自动续期，操作如下：</p><p>在Panel中找到File manager选项卡，进入一个自己喜欢的路径，然后找到上方Send按钮左边的+，选择New empty file，文件名命名为 <code>auto-renew.sh</code>， 右键点击 <code>auto-renew.sh</code>，选择View/Edit &gt; Source Editor，进行编辑，把下面的代码块的内容都复制进去：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span></span><br><span class="line">  sshpass -p <span class="string">&#x27;密码&#x27;</span> ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -tt 用户名@地址 <span class="string">&quot;exit&quot;</span> &amp;</span><br><span class="line">  <span class="built_in">sleep</span> 259200  <span class="comment">#30天为259200秒</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><br>记得把其中的密码、用户名、ssh的地址修改为你自己的。</p><p>保存后回到SSH中，进入 <code>auto-renew.sh</code> 所在的路径：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> xxx    <span class="comment">#其中xxx为你的auto-renew.sh文件的存放路径</span></span><br></pre></td></tr></table></figure><br>给 auto-renew.sh添加可执行权限：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x auto-renew.sh</span><br></pre></td></tr></table></figure><br>使用pm2启动：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/.npm-global/bin/pm2 start ./auto-renew.sh</span><br></pre></td></tr></table></figure><br>这样就会每隔一个月自动执行一次SSH连接，自己SSH自己进行续期。</p>
+              </div>
+            </details>
+<details class="folding-tag" ><summary> 自动启动 </summary>
+              <div class='content'>
+              <p>在Panel中找到Cron jobs选项卡，使用Add cron job功能添加任务：<br><img src="https://b2.shangskr.top/serv00%E5%9B%BE%E6%96%87/02.webp" alt=""><br>Specify time选择After reboot，即为重启后运行。Form type选择Advanced，Command写：<br><code>/home/你的用户名/.npm-global/bin/pm2 resurrect</code><br>(记得把你的用户名改为你的用户名)<br>添加完之后，在SSH窗口保存pm2的当前任务列表快照：<br><code>~/.npm-global/bin/pm2 save</code><br>这样每次serv00不定时重启任务时，都能自动调用pm2读取保存的任务列表快照，恢复任务列表。</p>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>cloudflare</tag>
+        <tag>免费UNIX服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于这篇作文</title>
     <url>/posts/13.html</url>
     <content><![CDATA[<h2 id="匆匆忙忙今天18点要回学校，关于这个作文，我没有思路。（刚考的）哎！让ChatGPT来写一写吧！"><a href="#匆匆忙忙今天18点要回学校，关于这个作文，我没有思路。（刚考的）哎！让ChatGPT来写一写吧！" class="headerlink" title="匆匆忙忙今天18点要回学校，关于这个作文，我没有思路。（刚考的）哎！让ChatGPT来写一写吧！"></a>匆匆忙忙今天18点要回学校，关于这个作文，我没有思路。（刚考的）哎！让ChatGPT来写一写吧！</h2><h2 id="题目（领悟生活，感悟人生）"><a href="#题目（领悟生活，感悟人生）" class="headerlink" title="题目（领悟生活，感悟人生）"></a>题目（领悟生活，感悟人生）</h2><p>现实生活中，我们常常面临各种各样的困境和挑战。而在这些困境中，我们需要的不仅仅是眼前的破绽和表面的欣赏，更需要的是一种深入的“领悟”，一种对生活的思考和感悟。通过阅读上述材料，我深深地认识到了在生活中重在“领悟”的重要性。</p>
