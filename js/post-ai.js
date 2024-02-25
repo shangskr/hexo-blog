@@ -209,15 +209,16 @@ function ChucklePostAI(AI_option) {
       startAI(interface.introduce);
     }
     function aiRecommend() {
+      let timeouts = [];
       resetAI();
-      sto[2] = setTimeout(async() => {
-        let info = await recommendList();
-        if(info === "" || info === false){
-          startAI(`${interface.name}未能找到任何可推荐的文章。`);
-        }else if(info){
-          explanation.innerHTML = info;
-        }
-      }, 200);
+      animationRunning = false;
+      explanation.innerHTML = "生成中. . .";
+      aiStr = "";
+      aiStrLength = "";
+      observer.disconnect();
+      timeouts[2] = setTimeout(() => {
+        explanation.innerHTML = recommendList();
+      }, 600);
     }
     async function aiGenerateAbstract() {
       resetAI();
@@ -266,57 +267,39 @@ function ChucklePostAI(AI_option) {
         summarySpeechShow();
       }
     }
-    async function recommendList() {
-      completeGenerate = false;
-      controller = new AbortController();
-      signal = controller.signal;
-      let response = '';
-      let info = '';
-      let data = '';
-      const options = {
-        signal,
-        method: 'GET',
-        headers: {'content-type': 'application/x-www-form-urlencoded'},
-      };
-      // 利用sessionStorage缓存推荐列表，有则缓存中读取，无则获取后缓存
-      if(sessionStorage.getItem('recommendList')){
-        data = JSON.parse(sessionStorage.getItem('recommendList'));
-      }else{
-        try {
-          response = await fetch(`https://summary.tianli0.top/recommends?url=${encodeURIComponent(window.location.href)}&author=${AI_option.rec_method ? AI_option.rec_method : 'all'}`, options);
-          completeGenerate = true;
-          if (response.status === 429) {
-            startAI('请求过于频繁，请稍后再请求AI。');
-          }
-          if (!response.ok) {
-            throw new Error('Response not ok');
-          }
-          // 处理响应
-        } catch (error) {
-          if (error.name === "AbortError") {
-            // console.log("请求已被中止");
-          }else{
-            console.error('Error occurred:', error);
-            startAI("获取推荐出错了，请稍后再试。");
-          }
-          completeGenerate = true;
-          return false;
+    function recommendList() {
+      let thumbnail = document.querySelectorAll(".relatedPosts-list a");
+      console.log(thumbnail);
+      if (!thumbnail.length) {
+        const cardRecentPost = document.querySelector(".card-widget.card-recent-post");
+        if (!cardRecentPost) return "";
+
+        thumbnail = cardRecentPost.querySelectorAll(".aside-list-item a");
+
+        let list = "";
+        for (let i = 0; i < thumbnail.length; i++) {
+          const item = thumbnail[i];
+          list += `<div class="ai-recommend-item"><span class="index">${
+            i + 1
+          }：</span><a href="javascript:;" onclick="pjax.loadUrl('${item.href}')" title="${
+            item.title
+          }" data-pjax-state="">${item.title}</a></div>`;
         }
-        // 解析响应并返回结果
-        data = await response.json();
-        sessionStorage.setItem('recommendList', JSON.stringify(data));
+
+        return `很抱歉，无法找到类似的文章，你也可以看看本站最新发布的文章：<br /><div class="ai-recommend">${list}</div>`;
       }
-      if(data.hasOwnProperty("success") && !data.success){
-        return false;
-      }else{
-        info = `推荐文章：<br />`;
-        info += '<div class="ai-recommend">';
-        data.forEach((item, index) => {
-          info += `<div class="ai-recommend-item"><span>推荐${index + 1}：</span><a target="_blank" href="${item.url}" title="${item.title ? item.title : "未获取到题目"}">${item.title ? item.title : "未获取到题目"}</a></div>`;
-        });
-        info += '</div>'
+
+      let list = "";
+      for (let i = 0; i < thumbnail.length; i++) {
+        const item = thumbnail[i];
+        list += `<div class="ai-recommend-item"><span>推荐${
+          i + 1
+        }：</span><a href="javascript:;" onclick="pjax.loadUrl('${item.href}')" title="${
+          item.title
+        }" data-pjax-state="">${item.title}</a></div>`;
       }
-      return info;
+
+      return `推荐文章：<br /><div class="ai-recommend">${list}</div>`;
     }
     // 矩阵穿梭
     async function matrixShuttle(){
