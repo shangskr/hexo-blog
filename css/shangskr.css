@@ -255,6 +255,11 @@ h6::before {
   line-height: 2.5em;
 }
 
+/*页码按钮居中*/
+nav#pagination {
+    width:100%;
+}
+
 /*页码按钮圆角*/
 #pagination .page-number.current {
     border-radius: 7px;
@@ -314,6 +319,7 @@ h6::before {
 
 /* 首页分类条展示 */
 #category-bar{
+    width: 100%;
     padding: 0.4rem 1rem 0.4rem 0.5rem;
     background-color: #ffffff;
     border-radius: 12px;
@@ -646,6 +652,18 @@ border: 3px solid #19a5c1;
   100% {
     box-shadow: 0px 0px 1px 1px #39c5bb;
   }
+}
+
+/* 去除导航栏选项中底下的蓝条 */
+#nav *::after{
+    background-color: transparent!important;
+}
+
+/* 导航栏菜单鼠标移入字体放大 */
+#nav #site-name:hover, 
+#nav .menus_item:hover, 
+#nav #search-button:hover{
+    font-size:28px;
 }
 
 
