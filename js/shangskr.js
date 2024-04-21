@@ -13,3 +13,17 @@ var shangskr = {
         input.setSelectionRange(-1, -1);
     },
 };
+
+/* post chat */
+var postChatConfig = {
+  backgroundColor: "#3e86f6",
+  bottom: "16px",
+  left: "16px",
+  fill: "#FFFFFF",
+  width: "44px",
+  frameWidth: "375px",
+  frameHeight: "600px",
+  defaultInput: true,
+  upLoadWeb: true,
+  showInviteLink: true
+};
