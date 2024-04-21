@@ -390,7 +390,7 @@ nav#pagination {
   }
 
   /* 所有卡片线框式 */
-  .card-widget,#rightside-config-hide button,#rightside-config-show button,.recent-post-item,#archive,#page,#post,#category-bar,.page-number,#textnumer{
+  .card-widget,#rightside-config-hide button,#rightside-config-show button,.recent-post-item,#archive,#page,#post,#category-bar,.page-number,#textnumer,#to_comment{
 border: 3px solid #19a5c1;
 }
 #rightside-config-hide button,#rightside-config-show button{
@@ -549,7 +549,7 @@ border: 3px solid #19a5c1;
 .newPost-right {
     right: 15px;
 }
-/* 最近更新图标 */
+/* 最近更新图标(因为双栏，所以把updatePost-left的内容由left改为right)这样才不会错位 */
 .updatePost-left, .updatePost-right {
     z-index: 1;
     position: absolute;
@@ -561,7 +561,7 @@ border: 3px solid #19a5c1;
 }
 
 .updatePost-left {
-    left: 15px;
+    right: 15px;
 }
 
 .updatePost-right {
@@ -850,4 +850,8 @@ border: 3px solid #19a5c1;
   }
 }
 
-
+/* 归档页面底部按钮css */
+.layout > div:not(.recent-posts) .pagination .page-number {
+    height: 33px;
+    border-radius: 7px;
+}
