@@ -66,7 +66,7 @@
   <entry>
     <title>kali-ddos</title>
     <url>/posts/15.html</url>
-    <content><![CDATA[<p>最新看到一个可以免费开一台kali linux的机子高兴坏了emmm</p>
+    <content><![CDATA[<p>最近看到一个可以免费开一台kali linux的机子emmm</p>
 <h2 id="进入segfault"><a href="#进入segfault" class="headerlink" title="进入segfault"></a>进入<a href="https://shell.segfault.net/" title="segfault">segfault</a></h2><p><img src="https://b2.shangskr.top/kali-ddos/01.webp" alt=""><br>如果你是第一次，就点击<code>I am New Here</code>然后会给你一串密钥记下来（用于下次登入）下一次登入就选择<code>I have been here</code>输入密钥。<br><img src="https://b2.shangskr.top/kali-ddos/02.webp" alt=""><br>然后输入指令进入管理员<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><br>clone一下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Andysun06/ddos</span><br></pre></td></tr></table></figure><br>输入<code>ls</code>查看是否有ddos<br>然后输入<code>ddos</code>进入,输入<code>ls</code>你会看到ddos-p3.py,然后输入<code>python ddos-p3.py</code><br>然后输入目标ip  win系统的话直接<code>win+r</code>输入cmd然后输入<code>ping xxx.com</code>就可以获得ip了<br><img src="https://b2.shangskr.top/kali-ddos/03.webp" alt=""><br>然后让我们输入端口（大部分都是80或者443）<br>当然你可以进入这个网站自带的vnc进行远程桌面进行ping<br>右键找到这个点击<br><img src="https://b2.shangskr.top/kali-ddos/04.webp" alt=""><br>输入<code>nmap ip</code>ip记得更换为你想获得端口的ip<br><img src="https://b2.shangskr.top/kali-ddos/05.webp" alt=""><br>攻击速度（1~1000）</p>
 <h2 id="下面是切换中文的指令"><a href="#下面是切换中文的指令" class="headerlink" title="下面是切换中文的指令"></a>下面是切换中文的指令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#进入root模式</span></span><br><span class="line">sudo su</span><br><span class="line"><span class="comment">#安装中文字体</span></span><br><span class="line">apt install ttf-wqy-zenhei</span><br><span class="line"><span class="comment">#设置系统语言区设</span></span><br><span class="line">dpkg-reconfigure locales</span><br><span class="line"><span class="comment">#选择中文字体(滚轮或↓往下拉 空格选中)（tab下一个）</span></span><br><span class="line"><span class="comment">#选中zh_CN.UTF-8 UTF-8（在最下面呢）</span></span><br><span class="line"><span class="comment">#↓再次选择zh_CN.UTF-8</span></span><br><span class="line"><span class="comment">#安装成功返回终端输入指令重启</span></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
@@ -262,8 +262,6 @@
       </categories>
       <tags>
         <tag>教程</tag>
-        <tag>cloudflare</tag>
-        <tag>免费UNIX服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -317,10 +315,10 @@
 </div><br>文章摘自<a href="https://www.microcharon.top/tech/106.html" title="Microcharon">Microcharon</a></p>
 ]]></content>
       <categories>
-        <category>监控</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>监控</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -476,10 +474,10 @@
 </div></p>
 ]]></content>
       <categories>
-        <category>监控</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>监控</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -492,12 +490,10 @@
 </div></p>
 ]]></content>
       <categories>
-        <category>图床</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>图床</tag>
-        <tag>cloudflare</tag>
-        <tag>backblaze</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -512,12 +508,10 @@
 <h2 id="DUAL游戏测评"><a href="#DUAL游戏测评" class="headerlink" title="DUAL游戏测评"></a>DUAL游戏测评</h2><p> 此游戏支持<strong>中文</strong>，这款游戏也是一个比较有意思的联机可以和自己的朋友双人对打的游戏，可以和朋友互相的射击，只需要wifi和蓝牙进行联机就可以了，非常的方便，适合大家聚会或者小情侣来一起玩哦，参与性互动性特别的高，赶紧来下载DUAL试试吧！<br> 当你打开后你会看见是英文的<br><img src="https://b2.shangskr.top/DUAL同屏/5.webp" alt=""><br> 1.接下来切换为中文（右滑动屏幕，左下角出现language，点击它，就可以切换了，切换方式就是长按选定）如图<br><img src="https://b2.shangskr.top/DUAL同屏/6.webp" alt=""><br><img src="https://b2.shangskr.top/DUAL同屏/7.webp" alt=""><br> 长按右下角箭头就可以切换<br> 进入每一个模式他会有教学部分（注意，“跳过”“skip”这个文字是可以按住的，长按跳过教学）<br><img src="https://b2.shangskr.top/DUAL同屏/8.webp" alt=""><br> 剩下的你就可以玩了，在他需要的环境下，和小伙伴一起玩。<br> <a href="https://yuwushang.lanzouf.com/idokQ0mlvqof" title="下载地址">下载地址</a>（点击下载）<br> 密码为1234<br> 注：（如果打不开，请把链接中的lanzouf中的f更改为x或者i等等就可以打开了）</p>
 ]]></content>
       <categories>
-        <category>安卓</category>
+        <category>其它</category>
       </categories>
       <tags>
-        <tag>安卓</tag>
-        <tag>DUAL</tag>
-        <tag>小游戏</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -535,7 +529,6 @@ net start termservice</code><br> windows+R输入cmd，打开以后重新启动�
         <category>教程</category>
       </categories>
       <tags>
-        <tag>RDPWrap</tag>
         <tag>教程</tag>
       </tags>
   </entry>
@@ -550,7 +543,7 @@ net start termservice</code><br> windows+R输入cmd，打开以后重新启动�
         <category>其它</category>
       </categories>
       <tags>
-        <tag>免费UNIX服务器</tag>
+        <tag>其它</tag>
       </tags>
   </entry>
   <entry>
@@ -574,10 +567,10 @@ net start termservice</code><br> windows+R输入cmd，打开以后重新启动�
     <content><![CDATA[<h2 id="免魔法注册freenom域名的插件安装"><a href="#免魔法注册freenom域名的插件安装" class="headerlink" title="免魔法注册freenom域名的插件安装"></a>免魔法注册freenom域名的插件安装</h2><p> 1.下面的官网<br><a href="https://he.firefoxcn.net/" title="Header Editor">Header Editor</a><br><img src="https://b2.shangskr.top/freenom免魔法插件图文/1.webp" alt=""><br> 2.点击开始使用<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/2.webp" alt=""><br> 3.你没有前3个浏览器可以点击自分发版本跳转到github<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/3.webp" alt=""><br> 4.根据你的版本下载你需要的插件源码<br> 5.打开你的浏览器的扩展插件选择开发者选项，导入刚才下载并解压出来的文件<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/4.webp" alt=""><br> 6.点击它然后管理<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/5.webp" alt=""><br> 7.然后选择导入和导出<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/6.webp" alt=""><br><img src="https://b2.shangskr.top/freenom免魔法插件图文/7.webp" alt=""><br>规则（链接）：<a href="https://github.azurezeng.com/static/HE-GoogleRedirect.json">https://github.azurezeng.com/static/HE-GoogleRedirect.json</a><br> 8.记得点击保存<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/8.webp" alt=""><br> 9.然后返回查看是否开启<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/9.webp" alt=""><br> 10.最后如果全部开启，你就可以不用魔法注册freenom的域名了<br><img src="https://b2.shangskr.top/freenom免魔法插件图文/10.webp" alt=""></p>
 ]]></content>
       <categories>
-        <category>freenom</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>freenom</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -601,8 +594,7 @@ net start termservice</code><br> windows+R输入cmd，打开以后重新启动�
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>waline</tag>
-        <tag>评论系统</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -616,10 +608,10 @@ net start termservice</code><br> windows+R输入cmd，打开以后重新启动�
 <p> 关于托管域名到cf就这些了。</p>
 ]]></content>
       <categories>
-        <category>freenom</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>freenom</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>
