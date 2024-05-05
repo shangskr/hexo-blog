@@ -955,3 +955,65 @@ border: 3px solid #19a5c1;
     background-size: 190%!important;
     background-repeat: no-repeat!important;
 }
+
+/* 侧边栏归档卡片css */
+#aside-content .card-archives ul.card-archive-list>.card-archive-list-item a:hover {
+    background-color: var(--story-theme)!important
+}
+
+li.card-archive-list-item {
+    width: 100%;
+    flex: 0 0 48%
+}
+
+#aside-content .card-archives ul.card-archive-list>.card-archive-list-item a,#aside-content .card-categories ul.card-category-list>.card-category-list-item a,.recent-posts .recent-post-item .recent-post-cover img.article-cover {
+    border-radius: 10px
+}
+
+#aside-content .card-archives ul.card-archive-list>.card-archive-list-item a {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    border: 1px solid #e3e8f7;
+    margin: 4px 0
+}
+
+#aside-content .card-archives ul.card-archive-list>.card-archive-list-item a span,#aside-content .card-categories ul.card-category-list>.card-category-list-item a span,#aside-content .card-info .card-info-data>.card-info-data-item a .headline,#pagination .next_info,#pagination .prev_info,#sidebar #sidebar-menus .menus_items .site-page,#sidebar #sidebar-menus .site-data .data-item>a>div,.limit-one-line {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+#aside-content .card-archives ul.card-archive-list>.card-archive-list-item a span,#aside-content .card-categories ul.card-category-list>.card-category-list-item a span,#aside-content .card-info .card-info-data>.card-info-data-item a .headline,#pagination .next_info,#pagination .prev_info,#sidebar #sidebar-menus .menus_items .site-page,#sidebar #sidebar-menus .site-data .data-item>a>div,.limit-one-line {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+span.card-archive-list-count {
+    width: auto;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: .9;
+    font-weight: 700
+}
+
+#aside-content .card-archives ul.card-archive-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.card-archive-list-link:hover {
+    padding-left: 10px!important;
+    color: var(--story-white)!important;
+    scale: 1.03
+}
+
+.card-archive-list-link {
+    padding-bottom: 10px!important
+}
