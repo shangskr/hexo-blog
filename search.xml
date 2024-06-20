@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>天气电子邮件通知</title>
+    <url>/posts/21.html</url>
+    <content><![CDATA[<h1 id="邮箱天气推送项目地址"><a href="#邮箱天气推送项目地址" class="headerlink" title="邮箱天气推送项目地址"></a>邮箱天气推送<a href="https://github.com/shangskr/Email-notification-for-weather" title="项目地址">项目地址</a></h1><p>本项目利用GitHub Action实现了通过电子邮件推送天气信息的功能。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
+<li>fork该仓库：</li>
+<li>创建一个OpenWeatherMap的API密钥，详细信息请访问 <a href="https://openweathermap.org/">OpenWeatherMap</a>。</li>
+<li>将你的OpenWeatherMap API密钥添加到GitHub Secrets中。在你的GitHub仓库中，转到Settings &gt; Secrets，然后添加一个名为<code>OPENWEATHERMAP_API_KEY</code>的新密钥，将你的API密钥作为值。</li>
+<li>你需要配置的环境变量（<code>API_KEY</code>和<code>OPENWEATHERMAP_API_KEY</code>配置一样，<code>EMAIL_PASSWORD</code>要使用SMTP服务的应用码而不是邮箱密码）：<ul>
+<li><code>API_KEY</code></li>
+<li><code>CITY</code></li>
+<li><code>EMAIL_PASSWORD</code></li>
+<li><code>OPENWEATHERMAP_API_KEY</code></li>
+<li><code>RECEIVER_EMAIL</code></li>
+<li><code>SENDER_EMAIL</code></li>
+</ul>
+</li>
+<li>在GitHub仓库的Settings中的Actions页面，确保开启了<code>Read and write permissions</code>和<code>Allow GitHub Actions to create and approve pull requests</code>。</li>
+<li>其中send_weather_email.py中第50行(<code>smtp.office365.com&#39;, 587</code>)请自行修改，我用到的是Outlook的SMTP和端口。另外，在<code>.github/workflows/daily_weather_notification.yml</code>中，第28行 <code>CITY: &quot;xingtai&quot;</code> # 替换成你要查询的城市名，城市名称请前往OpenWeatherMap查看。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Butterfly主题友情链接可用性检测</title>
     <url>/posts/20.html</url>
     <content><![CDATA[<p>参考链接Heo <a class="btn-beautify " href="https://blog.zhheo.com/p/baa6b18b.html/" 

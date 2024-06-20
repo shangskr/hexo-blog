@@ -6,7 +6,7 @@
   <link href="https://hexo.shangskr.top/atom.xml" rel="self"/>
   
   <link href="https://hexo.shangskr.top/"/>
-  <updated>2024-06-17T12:33:12.872Z</updated>
+  <updated>2024-06-20T03:53:44.230Z</updated>
   <id>https://hexo.shangskr.top/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>天气电子邮件通知</title>
+    <link href="https://hexo.shangskr.top/posts/21.html"/>
+    <id>https://hexo.shangskr.top/posts/21.html</id>
+    <published>2024-06-20T03:52:00.000Z</published>
+    <updated>2024-06-20T03:53:44.230Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="邮箱天气推送项目地址"><a href="#邮箱天气推送项目地址" class="headerlink" title="邮箱天气推送项目地址"></a>邮箱天气推送<a href="https://github.com/shangskr/Email-notification-for-weather" title="项目地址">项目地址</a></h1><p>本项目利用GitHub Action实现了通过电子邮件推送天气信息的功能。</p><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol><li>fork该仓库：</li><li>创建一个OpenWeatherMap的API密钥，详细信息请访问 <a href="https://openweathermap.org/">OpenWeatherMap</a>。</li><li>将你的OpenWeatherMap API密钥添加到GitHub Secrets中。在你的GitHub仓库中，转到Settings &gt; Secrets，然后添加一个名为<code>OPENWEATHERMAP_API_KEY</code>的新密钥，将你的API密钥作为值。</li><li>你需要配置的环境变量（<code>API_KEY</code>和<code>OPENWEATHERMAP_API_KEY</code>配置一样，<code>EMAIL_PASSWORD</code>要使用SMTP服务的应用码而不是邮箱密码）：<ul><li><code>API_KEY</code></li><li><code>CITY</code></li><li><code>EMAIL_PASSWORD</code></li><li><code>OPENWEATHERMAP_API_KEY</code></li><li><code>RECEIVER_EMAIL</code></li><li><code>SENDER_EMAIL</code></li></ul></li><li>在GitHub仓库的Settings中的Actions页面，确保开启了<code>Read and write permissions</code>和<code>Allow GitHub Actions to create and approve pull requests</code>。</li><li>其中send_weather_email.py中第50行(<code>smtp.office365.com&#39;, 587</code>)请自行修改，我用到的是Outlook的SMTP和端口。另外，在<code>.github/workflows/daily_weather_notification.yml</code>中，第28行 <code>CITY: &quot;xingtai&quot;</code> # 替换成你要查询的城市名，城市名称请前往OpenWeatherMap查看。</li></ol>]]></content>
+    
+    
+    <summary type="html">天气推送服务</summary>
+    
+    
+    
+    <category term="教程" scheme="https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="教程" scheme="https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Butterfly主题友情链接可用性检测</title>
     <link href="https://hexo.shangskr.top/posts/20.html"/>
     <id>https://hexo.shangskr.top/posts/20.html</id>
-    <published>2024-06-17T08:28:52.000Z</published>
-    <updated>2024-06-17T12:33:12.872Z</updated>
+    <published>2024-06-17T08:28:53.000Z</published>
+    <updated>2024-06-20T03:53:52.149Z</updated>
     
     <content type="html"><![CDATA[<p>参考链接Heo <a class="btn-beautify " href="https://blog.zhheo.com/p/baa6b18b.html/"   title="Heo"><i class="orange larger"></i><span>Heo</span></a><br>发送 HEAD 请求来检查链接是否可访问(用到的是github action+vercel)</p><h2 id="1-Heo哥的方案是用的python脚本运行的，奈何我的老win7安装py都是那么的难（py3-4多的版本完美安装pyyaml结果运行告诉我Py版本太低无法解析某些字符——好好好——安装py3-8-6是win7的极限了但是不自带pip-离谱说好的py3-4以上自带pip的-）python方案对我来说结束了（一辈子没遇到的问题都让我遇到了）"><a href="#1-Heo哥的方案是用的python脚本运行的，奈何我的老win7安装py都是那么的难（py3-4多的版本完美安装pyyaml结果运行告诉我Py版本太低无法解析某些字符——好好好——安装py3-8-6是win7的极限了但是不自带pip-离谱说好的py3-4以上自带pip的-）python方案对我来说结束了（一辈子没遇到的问题都让我遇到了）" class="headerlink" title="1.Heo哥的方案是用的python脚本运行的，奈何我的老win7安装py都是那么的难（py3.4多的版本完美安装pyyaml结果运行告诉我Py版本太低无法解析某些字符——好好好——安装py3.8.6是win7的极限了但是不自带pip(离谱说好的py3.4以上自带pip的)）python方案对我来说结束了（一辈子没遇到的问题都让我遇到了）"></a>1.Heo哥的方案是用的python脚本运行的，奈何我的老win7安装py都是那么的难（py3.4多的版本完美安装pyyaml结果运行告诉我Py版本太低无法解析某些字符——好好好——安装py3.8.6是win7的极限了但是不自带pip(离谱说好的py3.4以上自带pip的)）python方案对我来说结束了（一辈子没遇到的问题都让我遇到了）</h2><h2 id="2-换一种方案之powershell——使用win7自带的powershell结果版本太低不行，升级powershell到5-1后可以了，但是安装psyaml失败了，网络错误，代理也走了（没道理）———powershell方案结束"><a href="#2-换一种方案之powershell——使用win7自带的powershell结果版本太低不行，升级powershell到5-1后可以了，但是安装psyaml失败了，网络错误，代理也走了（没道理）———powershell方案结束" class="headerlink" title="2.换一种方案之powershell——使用win7自带的powershell结果版本太低不行，升级powershell到5.1后可以了，但是安装psyaml失败了，网络错误，代理也走了（没道理）———powershell方案结束"></a>2.换一种方案之powershell——使用win7自带的powershell结果版本太低不行，升级powershell到5.1后可以了，但是安装psyaml失败了，网络错误，代理也走了（没道理）———powershell方案结束</h2><h2 id="3-难道真的就结束了吗？想起来了github-action直接开始搞，成功运行并且生成无法访问的txt文件（产物）但是必须下载然后解压才能看——这太麻烦了———然后脑子一转想到了输出到html以网页的形式不输出来不就省事了———开整，然后也是遇许多问题但是！！！经过我不懈努力，在1个多小时的思考-运行中完美运行。后期就可以通过cloudflare或者github-pages或者vercel来部署了"><a href="#3-难道真的就结束了吗？想起来了github-action直接开始搞，成功运行并且生成无法访问的txt文件（产物）但是必须下载然后解压才能看——这太麻烦了———然后脑子一转想到了输出到html以网页的形式不输出来不就省事了———开整，然后也是遇许多问题但是！！！经过我不懈努力，在1个多小时的思考-运行中完美运行。后期就可以通过cloudflare或者github-pages或者vercel来部署了" class="headerlink" title="3.难道真的就结束了吗？想起来了github action直接开始搞，成功运行并且生成无法访问的txt文件（产物）但是必须下载然后解压才能看——这太麻烦了———然后脑子一转想到了输出到html以网页的形式不输出来不就省事了———开整，然后也是遇许多问题但是！！！经过我不懈努力，在1个多小时的思考+运行中完美运行。后期就可以通过cloudflare或者github pages或者vercel来部署了"></a>3.难道真的就结束了吗？想起来了github action直接开始搞，成功运行并且生成无法访问的txt文件（产物）但是必须下载然后解压才能看——这太麻烦了———然后脑子一转想到了输出到html以网页的形式不输出来不就省事了———开整，然后也是遇许多问题但是！！！经过我不懈努力，在1个多小时的思考+运行中完美运行。后期就可以通过cloudflare或者github pages或者vercel来部署了</h2><p>效果图如下<br><img src="https://b2.shangskr.top/checklinks/00.webp" alt="效果图" title="效果图"></p><h2 id="至于轻笑大佬的链接为啥出现在这里是因为github-action本来就是国外的服务，然后轻笑的域名阻断的国外服务，所以就出现了无法访问的结果——后续还是需要手动去检查的（我的部署在cf-workers的博客也出现在这里就很离谱，原因未知）"><a href="#至于轻笑大佬的链接为啥出现在这里是因为github-action本来就是国外的服务，然后轻笑的域名阻断的国外服务，所以就出现了无法访问的结果——后续还是需要手动去检查的（我的部署在cf-workers的博客也出现在这里就很离谱，原因未知）" class="headerlink" title="至于轻笑大佬的链接为啥出现在这里是因为github action本来就是国外的服务，然后轻笑的域名阻断的国外服务，所以就出现了无法访问的结果——后续还是需要手动去检查的（我的部署在cf-workers的博客也出现在这里就很离谱，原因未知）"></a>至于轻笑大佬的链接为啥出现在这里是因为github action本来就是国外的服务，然后轻笑的域名阻断的国外服务，所以就出现了无法访问的结果——后续还是需要手动去检查的（我的部署在cf-workers的博客也出现在这里就很离谱，原因未知）</h2><h2 id="4-项目地址"><a href="#4-项目地址" class="headerlink" title="4.项目地址"></a>4.<a href="https://github.com/shangskr/butterfly-check-links" title="项目地址">项目地址</a></h2><p>使用方法首先fork项目然后创建一个不过期的token(token要包含repo的所有选项和workflow和write:packages和delete:packages和project)保存token回到仓库Secrets and variables——action添加变量PAT_TOKEN然后填写token就好了<br>接下来打开仓库设置action——general勾选Allow all actions and reusable workflows和Read and write permissions和Allow GitHub Actions to create and approve pull requests保存<br>fork项目后你可以把这个文件删除index.html（后期会自动生成）<br>link.yml这个文件里面改成你的博客的友链yaml内容就好了<br>打开action运行工程流文件就好了（如果这里运行不了，就回到任何一个文件夹随便改一个没用的文本就好了）</p><h2 id="5-剩下的部分部署就好了我用的vercel——-如果有什么问题欢迎issues"><a href="#5-剩下的部分部署就好了我用的vercel——-如果有什么问题欢迎issues" class="headerlink" title="5.剩下的部分部署就好了我用的vercel——-如果有什么问题欢迎issues"></a>5.剩下的部分部署就好了我用的vercel——-如果有什么问题欢迎<a href="https://github.com/shangskr/butterfly-check-links/issues" title="issues">issues</a></h2>]]></content>
     
@@ -416,31 +437,6 @@
     
     
     <category term="hexo" scheme="https://hexo.shangskr.top/categories/hexo/"/>
-    
-    
-    <category term="教程" scheme="https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将freenom的域名托管到cloudflare上</title>
-    <link href="https://hexo.shangskr.top/posts/1.html"/>
-    <id>https://hexo.shangskr.top/posts/1.html</id>
-    <published>2022-12-09T14:12:42.000Z</published>
-    <updated>2024-05-05T02:51:37.719Z</updated>
-    
-    <content type="html"><![CDATA[<p>2022-12-09 08:24:34 星期五<br>用cloudflare搭建网站，无需服务器，仅需要一个域名即可食用。</p><h2 id="首先你需要申请一个域名或购买，这里我以freenom为例。"><a href="#首先你需要申请一个域名或购买，这里我以freenom为例。" class="headerlink" title="首先你需要申请一个域名或购买，这里我以freenom为例。"></a>首先你需要申请一个域名或购买，这里我以freenom为例。</h2><p><img src="https://b2.shangskr.top/freenom域名托管cf图文/1.webp" alt=""><br> 然后打开cf根据下图：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/2.webp" alt=""><br> 将域名添加进去<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/3.webp" alt=""><br> 当然这里你可以选择付费，白嫖的也不错，果断选择0元。<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/4.webp" alt=""></p><h2 id="根据图示：继续"><a href="#根据图示：继续" class="headerlink" title="根据图示：继续"></a>根据图示：继续</h2><p><img src="https://b2.shangskr.top/freenom域名托管cf图文/5.webp" alt=""><br><img src="https://b2.shangskr.top/freenom域名托管cf图文/6.webp" alt=""><br> 继续点击完成并检测：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/7.webp" alt=""><br> 下面这几步直接照做就可以：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/8.webp" alt=""><br><img src="https://b2.shangskr.top/freenom域名托管cf图文/9.webp" alt=""><br><img src="https://b2.shangskr.top/freenom域名托管cf图文/10.webp" alt=""><br><img src="https://b2.shangskr.top/freenom域名托管cf图文/11.webp" alt=""><br><img src="https://b2.shangskr.top/freenom域名托管cf图文/12.webp" alt=""></p><h2 id="上述步骤完成后讲自动跳转到这里："><a href="#上述步骤完成后讲自动跳转到这里：" class="headerlink" title="上述步骤完成后讲自动跳转到这里："></a>上述步骤完成后讲自动跳转到这里：</h2><p><img src="https://b2.shangskr.top/freenom域名托管cf图文/13.webp" alt=""><br> 然后打开freenom我的域名，管理域名页面如下图：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/14.webp" alt=""></p><p> 然后将cf提供的两个名称复制进去：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/15.webp" alt=""><br> 完成后会有下图提示：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/16.webp" alt=""><br> 最后回到cf等待即可（通常5分钟之内就完成）：<br><img src="https://b2.shangskr.top/freenom域名托管cf图文/17.webp" alt=""></p><p> 关于托管域名到cf就这些了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;2022-12-09 08:24:34 星期五&lt;br&gt;用cloudflare搭建网站，无需服务器，仅需要一个域名即可食用。&lt;/p&gt;
-&lt;h2 id=&quot;首先你需要申请一个域名或购买，这里我以freenom为例。&quot;&gt;&lt;a href=&quot;#首先你需要申请一个域名或购买，这里我以fre</summary>
-      
-    
-    
-    
-    <category term="教程" scheme="https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/"/>
     
     
     <category term="教程" scheme="https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/"/>
