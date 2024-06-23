@@ -152,95 +152,7 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
-/* 文章页H1-H6图标样式效果 */
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-  -webkit-animation: ccc 1.6s linear infinite;
-  animation: ccc 1.6s linear infinite;
-}
-@-webkit-keyframes ccc {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-1turn);
-    transform: rotate(-1turn);
-  }
-}
-@keyframes ccc {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-1turn);
-    transform: rotate(-1turn);
-  }
-}
-#content-inner.layout h1::before {
-    color: #ef50a8;
-    margin-left: -1.55rem;
-    font-size: 1.3rem;
-    margin-top: -0.23rem;
-  }
-  #content-inner.layout h2::before {
-    color: #fb7061;
-    margin-left: -1.35rem;
-    font-size: 1.1rem;
-    margin-top: -0.12rem;
-  }
-  #content-inner.layout h3::before {
-    color: #ffbf00;
-    margin-left: -1.22rem;
-    font-size: 0.95rem;
-    margin-top: -0.09rem;
-  }
-  #content-inner.layout h4::before {
-    color: #a9e000;
-    margin-left: -1.05rem;
-    font-size: 0.8rem;
-    margin-top: -0.09rem;
-  }
-  #content-inner.layout h5::before {
-    color: #57c850;
-    margin-left: -0.9rem;
-    font-size: 0.7rem;
-    margin-top: 0rem;
-  }
-  #content-inner.layout h6::before {
-    color: #5ec1e0;
-    margin-left: -0.9rem;
-    font-size: 0.66rem;
-    margin-top: 0rem;
-  }
-  #content-inner.layout h1:hover, /*本站已删除此行代码*/
-  #content-inner.layout h2:hover,
-  #content-inner.layout h3:hover,
-  #content-inner.layout h4:hover,
-  #content-inner.layout h5:hover,
-  #content-inner.layout h6:hover {
-    color: rgb(90,135,255);
-  }
-  #content-inner.layout h1:hover::before,
-  #content-inner.layout h2:hover::before,
-  #content-inner.layout h3:hover::before,
-  #content-inner.layout h4:hover::before,
-  #content-inner.layout h5:hover::before,
-  #content-inner.layout h6:hover::before {
-    color: rgb(90,135,255);
-    -webkit-animation: ccc 3.2s linear infinite;
-    animation: ccc 3.2s linear infinite;
-  }
   
-/* 页面设置icon转动速度调整 */
-#rightside_config i.fas.fa-cog.fa-spin {
-    animation: fa-spin 5s linear infinite;
-  }
 /*个人信息按钮圆角*/
 #card-info-btn {
   border-radius: 7px;
@@ -1052,3 +964,127 @@ span.card-archive-list-count {
     border: 3px solid #19a5c1;
     border-radius: 12px;
 }
+
+/*侧边栏标签美化*/
+#aside-content .card-tag-cloud a {
+  color: var(--heo-fontcolor) !important;
+  font-size: 0.8rem;
+  border-radius: 9px;
+  border-style: dashed;
+}
+#aside-content .item-headline {
+  font-weight: 700;
+}
+
+/*文章相关推荐卡片美化*/
+.relatedPosts > .relatedPosts-list > div {
+  border-radius: 20px;
+}
+
+/* 评论区评论大框 */
+.twikoo .tk-comments-container>.tk-comment {
+  /* 内边距 */
+  padding: 1rem;
+  /* 圆角 */
+  border-radius: 30px;
+  /* 背景颜色 */
+  background: var(--HiPeach-card-bg);
+  /* 变动动画时长 */
+  transition: .3s;
+}
+
+/* 浅色模式评论区评论大框 */
+[data-theme=light] .twikoo .tk-comments-container>.tk-comment {
+  /* 阴影 */
+  box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式评论区评论大框阴影悬浮加深 */
+[data-theme=light] .twikoo .tk-comments-container>.tk-comment:hover {
+  /* 阴影（浅色模式突出层次感） */
+  box-shadow: var(--card-hover-box-shadow);
+}
+
+/* 黑暗模式评论区评论大框 */
+[data-theme=dark] .twikoo .tk-comments-container>.tk-comment {
+  /* 边框样式 */
+  border-style: solid;
+  /* 边框宽度 */
+  border-width: var(--HiPeach-card-border-width);
+  /* 边框颜色 */
+  border-color: var(--HiPeach-card-border);
+}
+
+/* 设备信息 */
+.twikoo .tk-extra {
+  /* 圆角 */
+  border-radius: 30px;
+  /* 背景颜色 */
+  background: var(--HiPeach-card-bg);
+  /* 内边距 */
+  padding: 0.4rem;
+  /* 底边距 */
+  margin-bottom: 1rem;
+  /* 变动动画时长 */
+  transition: .3s;
+}
+
+/* 浅色模式设备信息 */
+[data-theme=light] .twikoo .tk-extra {
+  /* 阴影 */
+  box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式设备信息阴影悬浮加深 */
+[data-theme=light] .twikoo .tk-extra:hover {
+  /* 阴影 */
+  box-shadow: var(--card-hover-box-shadow);
+}
+
+/* 黑暗模式设备信息 */
+[data-theme=dark] .twikoo .tk-extra {
+  /* 边框样式 */
+  border-style: solid;
+  /* 边框宽度 */
+  border-width: var(--HiPeach-card-border-width);
+  /* 边框颜色 */
+  border-color: var(--HiPeach-card-border);
+}
+
+/* 加载更多按钮 */
+.twikoo .tk-expand {
+  /* 圆角 */
+  border-radius: 30px;
+}
+
+/* 浅色模式加载更多按钮 */
+[data-theme=light] .twikoo .tk-expand {
+  /* 阴影 */
+  box-shadow: var(--card-box-shadow);
+}
+
+/* 浅色模式加载更多按钮（鼠标悬浮时） */
+[data-theme=light] .twikoo .tk-expand:hover {
+  /* 阴影 */
+  box-shadow: var(--card-hover-box-shadow);
+  /* 背景颜色 */
+  background-color: var(--btn-bg);
+}
+
+/* 黑暗模式加载更多按钮（鼠标悬浮时） */
+[data-theme=dark] .twikoo .tk-expand:hover {
+  /* 背景颜色 */
+  background-color: var(--HiPeach-blue);
+}
+
+/* 黑暗模式加载更多按钮 */
+[data-theme=dark] .twikoo .tk-expand {
+  /* 边框样式 */
+  border-style: solid;
+  /* 边框宽度 */
+  border-width: var(--HiPeach-card-border-width);
+  /* 边框颜色 */
+  border-color: var(--HiPeach-card-border);
+}
+
+
