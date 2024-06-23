@@ -6840,7 +6840,6 @@ blockquote.pullquote.right {
     /* border-radius: 0; */
     padding: 0 1rem !important;
     box-shadow: none !important;
-    background: var(--anzhiyu-background);
   }
   .author-content-item .card-content .banner-button-group .banner-button-text {
     display: none;
@@ -7106,7 +7105,6 @@ blockquote.pullquote.right {
 
     .layout>div:first-child:not(.recent-posts) {
       padding: 1rem 1rem!important;
-      background: var(--HiPeach-background);
       box-shadow: none!important;
     }
 
