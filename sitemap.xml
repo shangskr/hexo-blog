@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.shangskr.top/diary/info.html</loc>
+    
+    <lastmod>2024-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hexo.shangskr.top/posts/23.html</loc>
     
     <lastmod>2024-07-04</lastmod>
@@ -281,15 +290,6 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/diary/info.html</loc>
-    
-    <lastmod>2023-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.shangskr.top/about/index.html</loc>
     
     <lastmod>2023-04-30</lastmod>
@@ -310,7 +310,7 @@
 
   <url>
     <loc>https://hexo.shangskr.top/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -318,21 +318,21 @@
   
   <url>
     <loc>https://hexo.shangskr.top/tags/hexo/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -341,21 +341,21 @@
   
   <url>
     <loc>https://hexo.shangskr.top/categories/hexo/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/categories/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-07-04</lastmod>
+    <lastmod>2024-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -233,12 +233,12 @@ nav#pagination {
 #category-bar{
     width: 100%;
     padding: 0.4rem 1rem 0.4rem 0.5rem;
-    background-color: #ffffff;
+    background: var(--heo-card-bg);
     border-radius: 12px;
     display: flex;
     white-space: nowrap;
     overflow: hidden;
-    margin-top: 1rem;
+    margin: 1rem 0 0rem 0;
     border: var(--style-border);
   }
   
@@ -855,7 +855,7 @@ span.card-archive-list-count {
     border-radius: 12px;
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-    border: var(--style-border-always);
+    border: var(--style-border);
     box-shadow: var(--icat-shadow-border);
     align-items: center;
 }
@@ -911,7 +911,7 @@ span.card-archive-list-count {
     border-radius: 12px;
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
-    border: var(--style-border-always);
+    border: var(--style-border);
     box-shadow: var(--icat-shadow-border);
     align-items: center;
 }
