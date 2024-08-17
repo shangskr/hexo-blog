@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>论坛自动签到</title>
+    <url>/posts/25.html</url>
+    <content><![CDATA[<h1 id="类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了"><a href="#类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了" class="headerlink" title="类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了"></a>类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了</h1><ul>
+<li>因为论坛有验证码，所以我们用cookie来实现密码登录<h1 id="直接教程（这里就不放图了，不会的自行百度）"><a href="#直接教程（这里就不放图了，不会的自行百度）" class="headerlink" title="直接教程（这里就不放图了，不会的自行百度）"></a>直接教程（这里就不放图了，不会的自行百度）</h1></li>
+</ul>
+<p>1.首先打开目标网站，打开签到页面，右键，点击检查或者按F12，右侧选择Network，抓之前先清空一下，然后点击开始签到，回答先右面Network中会有一个plugin.php开头的，就是它，点击去找到cookie复制保存等待使用。<br>2.我们使用github action来实现每天自动签到（<a href="https://github.com/shangskr/discuz-checkin" title="自动签到项目地址">自动签到项目地址</a>）<br>然后根据我提供的环境变量来填写就好了！<br>3.这个项目我自己测试了15天完美运行！</p>
+<h1 id="最近太忙了，水一贴吧"><a href="#最近太忙了，水一贴吧" class="headerlink" title="最近太忙了，水一贴吧~"></a>最近太忙了，水一贴吧~</h1>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用action+gh_issue_api完成订阅功能</title>
     <url>/posts/24.html</url>
     <content><![CDATA[<h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><a href="https://github.com/shangskr/Subscribe-to-RSS-Notifications-plus">项目地址</a></h1><h1 id="Subscribe-to-RSS-Notifications-plus"><a href="#Subscribe-to-RSS-Notifications-plus" class="headerlink" title="Subscribe-to-RSS-Notifications-plus"></a>Subscribe-to-RSS-Notifications-plus</h1><ul>

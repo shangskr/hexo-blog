@@ -6,7 +6,7 @@
   <link href="https://hexo.shangskr.top/atom.xml" rel="self"/>
   
   <link href="https://hexo.shangskr.top/"/>
-  <updated>2024-07-04T07:56:11.487Z</updated>
+  <updated>2024-08-17T06:30:22.129Z</updated>
   <id>https://hexo.shangskr.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论坛自动签到</title>
+    <link href="https://hexo.shangskr.top/posts/25.html"/>
+    <id>https://hexo.shangskr.top/posts/25.html</id>
+    <published>2024-08-17T06:30:40.000Z</published>
+    <updated>2024-08-17T06:30:22.129Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了"><a href="#类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了" class="headerlink" title="类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了"></a>类似于Discuz这样的论坛都可以实现自动签到（原理是一样的），这样我们就不用每天去手动签到了</h1><ul><li>因为论坛有验证码，所以我们用cookie来实现密码登录<h1 id="直接教程（这里就不放图了，不会的自行百度）"><a href="#直接教程（这里就不放图了，不会的自行百度）" class="headerlink" title="直接教程（这里就不放图了，不会的自行百度）"></a>直接教程（这里就不放图了，不会的自行百度）</h1></li></ul><p>1.首先打开目标网站，打开签到页面，右键，点击检查或者按F12，右侧选择Network，抓之前先清空一下，然后点击开始签到，回答先右面Network中会有一个plugin.php开头的，就是它，点击去找到cookie复制保存等待使用。<br>2.我们使用github action来实现每天自动签到（<a href="https://github.com/shangskr/discuz-checkin" title="自动签到项目地址">自动签到项目地址</a>）<br>然后根据我提供的环境变量来填写就好了！<br>3.这个项目我自己测试了15天完美运行！</p><h1 id="最近太忙了，水一贴吧"><a href="#最近太忙了，水一贴吧" class="headerlink" title="最近太忙了，水一贴吧~"></a>最近太忙了，水一贴吧~</h1>]]></content>
+    
+    
+    <summary type="html">Discuz论坛自动签到</summary>
+    
+    
+    
+    <category term="教程" scheme="https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="教程" scheme="https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>使用action+gh_issue_api完成订阅功能</title>
@@ -412,31 +433,6 @@
     
     
     <category term="教程" scheme="https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>申请免费UNIX服务器</title>
-    <link href="https://hexo.shangskr.top/posts/5.html"/>
-    <id>https://hexo.shangskr.top/posts/5.html</id>
-    <published>2022-12-22T14:26:42.000Z</published>
-    <updated>2024-05-05T03:02:28.932Z</updated>
-    
-    <content type="html"><![CDATA[<p>Unix是20世纪70年代初出现的一个操作系统，除了作为网络操作系统之外，还可以作为单机操作系统使用。Unix作为一种开发平台和台式操作系统获得了广泛使用，主要用于工程应用和科学计算等领域。</p><h2 id="发展历史："><a href="#发展历史：" class="headerlink" title="发展历史："></a>发展历史：</h2><p> 1.UNIX系统是一个分时系统。最早的UNIX系统于1970年问世。此前，只有面向批处理作业的操作系统，这样的系统对于需要立即得到响应的用户来说是太慢了。在60年代末，Kenneth Thompson和Dennis Ritchie都曾参加过交互方式分时系统Multics的设计，而开发该系统所使用的工具是CTSS。这两个系统在操作系统的发展过程中都产生过重大影响。在此基础上，在对当时现有的技术进行精选提炼和发展的过程中，K.Thompson于1969年在小型计算机上开发UNIX系统，后于1970年投入运行。<br> 2.1972年，DennisRitchie开发出C语言，用来改写原来用汇编语言编写的UNIX，由此产生了UNIX VersionV。1974年，Kenneth Thompson和Dennis Ritchie合写的“The UNIX Time-Sharing System”在Communication of ACM上发表，正式向外界披露了UNIX系统。</p><h2 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h2><p> 1.首先去网站注册（这里有两个网站都可以用）<br>（1）<a href="http://sdf.org/">http://sdf.org/</a><br>（2）<a href="http://freeshell.org/">http://freeshell.org/</a><br> 打开网站按下图填写的注册<br><img src="https://b2.shangskr.top/UNIX服务器图文/1.webp" alt=""><br> 2.注册好以后去你的邮箱找到一封SDF发来的邮件（这封邮件，里面有你的账号密码等等）注：邮箱如果没有记得去垃圾箱看看<br> 3.然后打开sdf连接工具这里我用（Termius）为例子，打开以后新建一个。<br><img src="https://b2.shangskr.top/UNIX服务器图文/2.webp" alt=""><br> 创建一个新主机<br><img src="https://b2.shangskr.top/UNIX服务器图文/3.webp" alt=""><br> 4.然后根据邮件的内容填写账号密码等等…<br><img src="https://b2.shangskr.top/UNIX服务器图文/4.webp" alt=""><br> 填写好后保存<br> 然后双击打开…等待连接<br><img src="https://b2.shangskr.top/UNIX服务器图文/5.webp" alt=""><br> 5.连接成功以后会让你输入key，这里直接跳过（按空格键跳过）<br><img src="https://b2.shangskr.top/UNIX服务器图文/6.webp" alt=""><br> 6.然后你就成功进入了UNIX，剩下的学习可以去百度，关于UNIX我只知道这些了。<br>最后附上效果图：<br><img src="https://b2.shangskr.top/UNIX服务器图文/7.webp" alt=""></p><h2 id="没用的知识又增加了！！！"><a href="#没用的知识又增加了！！！" class="headerlink" title="没用的知识又增加了！！！"></a>没用的知识又增加了！！！</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Unix是20世纪70年代初出现的一个操作系统，除了作为网络操作系统之外，还可以作为单机操作系统使用。Unix作为一种开发平台和台式操作系统获得了广泛使用，主要用于工程应用和科学计算等领域。&lt;/p&gt;
-&lt;h2 id=&quot;发展历史：&quot;&gt;&lt;a href=&quot;#发展历史：&quot; class</summary>
-      
-    
-    
-    
-    <category term="其它" scheme="https://hexo.shangskr.top/categories/%E5%85%B6%E5%AE%83/"/>
-    
-    
-    <category term="其它" scheme="https://hexo.shangskr.top/tags/%E5%85%B6%E5%AE%83/"/>
     
   </entry>
   
