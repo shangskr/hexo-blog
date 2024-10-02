@@ -1,0 +1,46 @@
+name: skrBlog
+catch_rules:
+  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
+  transform_rules:
+    - search: _
+      replace:
+        - _
+        - https://jsd.cdn.storisinz.site/npm
+        - https://jsd.proxy.aks.moe/npm
+        - https://jsdelivr.pai233.top/npm
+        - https://npm.webcache.cn
+  - rule: ^https\:\/\/cdnjs\.cloudflare\.com\/ajax\/libs
+  transform_rules:
+    - search: _
+      replace:
+        - _
+        - https://cdn.bootcdn.net/ajax/libs
+        - https://lib.baomitu.com
+        - https://mirrors.cqupt.edu.cn/cdnjs/ajax/libs # 重庆邮电
+        - https://cdn.staticfile.org
+        - https://mirrors.sustech.edu.cn/cdnjs/ajax/libs # 南大
+        - https://cdnjs.sourcegcdn.com/ajax/libs # 全同步 https://cdnjs.cloudflare.com
+  - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/gh)
+  transform_rules:
+    - search: _
+      replace:
+        - _
+        - https://jsd.cdn.storisinz.site/gh
+        - https://jsd.proxy.aks.moe/gh
+        - https://jsdelivr.pai233.top/gh
+        - https://code.webcache.cn/gh
+  - rule: _
+    transform_rules:
+      - search: \#.+
+        searchin: url
+        replace: ''
+      - search: _ 
+        action: fetch
+        fetch:
+          engine: fetch 
+      - search: (^4|^5) 
+        searchin: status 
+        action: return
+        return:
+          body: The GateWay is down!This Page is provided by ClientWorker!
+          status: 503
