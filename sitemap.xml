@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.shangskr.top/img/siteicon/README.html</loc>
+    
+    <lastmod>2024-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/manifest.json</loc>
+    
+    <lastmod>2024-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.shangskr.top/img/siteicon/README.html</loc>
+    
+    <lastmod>2024-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hexo.shangskr.top/posts/25.html</loc>
     
     <lastmod>2024-08-17</lastmod>
@@ -349,14 +376,14 @@
 
   
   <url>
-    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://hexo.shangskr.top/categories/hexo/</loc>
     <lastmod>2024-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/categories/hexo/</loc>
+    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
