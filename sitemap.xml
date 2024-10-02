@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hexo.shangskr.top/img/siteicon/README.html</loc>
+    <loc>https://hexo.shangskr.top/manifest.json</loc>
     
     <lastmod>2024-10-02</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/manifest.json</loc>
+    <loc>https://hexo.shangskr.top/img/siteicon/README.html</loc>
     
     <lastmod>2024-10-02</lastmod>
     
