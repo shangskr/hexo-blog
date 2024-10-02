@@ -33,16 +33,22 @@ catch_rules:
   
   - rule: _
     transform_rules:
-      - search: \#.+
-        searchin: url
-        replace: ''
-      - search: _ 
-        action: fetch
-        fetch:
-          engine: fetch 
-      - search: (^4|^5) 
-        searchin: status 
-        action: return
-        return:
-          body: The GateWay is down!This Page is provided by ClientWorker!
-          status: 503
+            - search: \#.*
+              searchin: url 
+              replace: ''
+            - search: \?.* 
+              replace: '' 
+            - search: ([^\/.]+)\/index(|\.html)$ 
+              action: redirect
+              redirect: 
+                to: $1/
+            - search: \/$
+              action: script
+              script:
+                name: list_post
+                skip: true
+            - search: \.md$
+              action: script
+              script:
+                name: show_post
+                skip: true
