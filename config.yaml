@@ -1,6 +1,5 @@
 name: skrBlog
 catch_rules:
-
   - rule: ^https\:\/\/((cdn|fastly|gcore|test1|quantil)\.jsdelivr\.net\/npm|unpkg\.com)
     transform_rules:
       - search: _

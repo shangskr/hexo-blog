@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>将freenom的域名托管到cloudflare上 | 安小歪</title><meta name="author" content="安 skr"><meta name="copyright" content="安 skr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><script>if (!!navigator.serviceWorker) {
-  if (localStorage.getItem('cw_installed') !== 'true') {window.stop();}
   navigator.serviceWorker.register('/cw.js?t=' + new Date().getTime()).then(async (registration) => {
       if (localStorage.getItem('cw_installed') !== 'true') {
           const conf = () => {
@@ -10,7 +9,14 @@
                       if (text === 'ok') {
                           console.log('[CW] Installing Success,Configuring Success,Starting...');
                           localStorage.setItem('cw_installed', 'true');
-                          window.location.reload();
+                          //如果你不希望重载页面，请移除下面七行
+                          //重载标识 - 开始
+                          fetch(window.location.href).then(res => res.text()).then(text => {
+                              document.open()
+                              document.write(text);
+                              document.close();
+                          });
+                          //重载标识 - 结束
                       } else {
                           console.warn('[CW] Installing Success,Configuring Failed,Sleeping 200ms...');
                           setTimeout(() => {
@@ -27,7 +33,7 @@
       }
   }).catch(err => {
       console.error('[CW] Installing Failed,Error: ' + err.message);
-  })
+  });
 } else { console.error('[CW] Installing Failed,Error: Browser not support service worker'); }
 </script><meta name="description" content="2022-12-09 08:24:34 星期五用cloudflare搭建网站，无需服务器，仅需要一个域名即可食用。 首先你需要申请一个域名或购买，这里我以freenom为例。 然后打开cf根据下图： 将域名添加进去 当然这里你可以选择付费，白嫖的也不错，果断选择0元。 根据图示：继续 继续点击完成并检测： 下面这几步直接照做就可以： 上述步骤完成后讲自动跳转到这里： 然后打开freenom我的域名">
 <meta property="og:type" content="article">

@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>朋友圈 | 安小歪</title><meta name="author" content="安 skr"><meta name="copyright" content="安 skr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><script>if (!!navigator.serviceWorker) {
-  if (localStorage.getItem('cw_installed') !== 'true') {window.stop();}
   navigator.serviceWorker.register('/cw.js?t=' + new Date().getTime()).then(async (registration) => {
       if (localStorage.getItem('cw_installed') !== 'true') {
           const conf = () => {
@@ -10,7 +9,14 @@
                       if (text === 'ok') {
                           console.log('[CW] Installing Success,Configuring Success,Starting...');
                           localStorage.setItem('cw_installed', 'true');
-                          window.location.reload();
+                          //如果你不希望重载页面，请移除下面七行
+                          //重载标识 - 开始
+                          fetch(window.location.href).then(res => res.text()).then(text => {
+                              document.open()
+                              document.write(text);
+                              document.close();
+                          });
+                          //重载标识 - 结束
                       } else {
                           console.warn('[CW] Installing Success,Configuring Failed,Sleeping 200ms...');
                           setTimeout(() => {
@@ -27,7 +33,7 @@
       }
   }).catch(err => {
       console.error('[CW] Installing Failed,Error: ' + err.message);
-  })
+  });
 } else { console.error('[CW] Installing Failed,Error: Browser not support service worker'); }
 </script><meta name="description" content="🎣 钓鱼                   var fdataUser &#x3D; {     apiurl: &#39;https:&#x2F;&#x2F;friends.shangskr.top&#x2F;&#39;,     defaultFish: 500,     hungryFish: 500,     }                      let UserConfig &#x3D; {">
 <meta property="og:type" content="website">
