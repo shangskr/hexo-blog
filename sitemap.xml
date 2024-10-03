@@ -353,13 +353,6 @@
 
   
   <url>
-    <loc>https://hexo.shangskr.top/tags/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2024-10-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hexo.shangskr.top/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-10-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -373,7 +366,21 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://hexo.shangskr.top/tags/%E5%85%B6%E5%AE%83/</loc>
+    <lastmod>2024-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2024-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://hexo.shangskr.top/categories/hexo/</loc>
@@ -384,13 +391,6 @@
   
   <url>
     <loc>https://hexo.shangskr.top/categories/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2024-10-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
