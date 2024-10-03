@@ -5,7 +5,15 @@ const INVALID_KEY = 'X-Swpp-Invalid';
 const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
-const matchCacheRule = (_url) => 3000;
+const matchCacheRule = (_url) => {
+        // 在浏览器环境中根据 URL 返回匹配的缓存时间
+        // 例如，返回3000表示需要缓存3000毫秒
+        const urlString = _url.toString();
+        if (urlString.includes('example')) {
+          return 60000; // 对于包含 'example' 的请求，缓存60秒
+        }
+        return 3000; // 其他请求缓存3秒
+      };
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
                         return url.substring(0, url.length - 10);
