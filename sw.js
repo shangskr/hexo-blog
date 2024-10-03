@@ -5,16 +5,9 @@ const INVALID_KEY = 'X-Swpp-Invalid';
 const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
-const matchCacheRule = (url) => {
-        const urlString = url.toString();
-
-        // 如果 URL 包含 '.js' 或 '.css'，使用永久缓存
-        if (urlString.endsWith('.js') || urlString.endsWith('.css')) {
-          return -1; // 永久缓存
-        }
-
-        // 其他资源统一缓存60秒
-        return 60000; // 60秒缓存
+const matchCacheRule = (_url) => {
+        // 返回缓存时间（单位：毫秒），3000 毫秒 = 3 秒
+        return 3000;
       };
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
@@ -119,19 +112,7 @@ const fetchWrapper = (request, banCache, cors, optional) => {
                 }
                 return fetch(request, init);
             };
-const isCors = (request) => {
-      const url = request.url;
-
-      // 默认启用 CORS 模式
-      return true;
-
-      // 如果你想对特定资源启用/禁用 CORS，可以这样做：
-      // 例如，对跨域 API 请求启用 CORS，对本地资源禁用 CORS
-      // if (url.includes('api') || url.startsWith('https://external-domain.com')) {
-      //     return true; // 启用 CORS
-      // }
-      // return false; // 否则使用 no-cors
-    };
+const isCors = () => false;
 const getFastestRequests = null;
 const getStandbyRequests = null;
 const fetchFastest = async (list, optional) => {
