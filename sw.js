@@ -5,14 +5,22 @@ const INVALID_KEY = 'X-Swpp-Invalid';
 const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
-const matchCacheRule = (_url) => {
-        // 在浏览器环境中根据 URL 返回匹配的缓存时间
-        // 例如，返回3000表示需要缓存3000毫秒
-        const urlString = _url.toString();
+const matchCacheRule = (url) => {
+        // 根据 URL 判断是否需要缓存
+        const urlString = url.toString();
+
+        // 例子：如果 URL 包含 'example', 返回缓存60秒
         if (urlString.includes('example')) {
-          return 60000; // 对于包含 'example' 的请求，缓存60秒
+          return 60000; // 60秒缓存
         }
-        return 3000; // 其他请求缓存3秒
+
+        // 例子：如果 URL 包含 'permanent', 返回负数，表示永久缓存
+        if (urlString.includes('permanent')) {
+          return -1; // 永久缓存
+        }
+
+        // 其他情况不需要缓存
+        return false; // 或者 null，undefined，或 0
       };
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
