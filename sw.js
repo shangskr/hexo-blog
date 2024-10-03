@@ -5,7 +5,10 @@ const INVALID_KEY = 'X-Swpp-Invalid';
 const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
-const matchCacheRule = (_url) => false;
+const matchCacheRule = (_url) => {
+        // 直接缓存整个 URL，设置定时缓存 3 秒
+        return 3000; // 3 秒，单位为毫秒
+      };
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
                         return url.substring(0, url.length - 10);
