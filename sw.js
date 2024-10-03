@@ -6,21 +6,16 @@ const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
 const matchCacheRule = (url) => {
-        // 根据 URL 判断是否需要缓存
+        // 为所有 URL 启用缓存
         const urlString = url.toString();
 
-        // 例子：如果 URL 包含 'example', 返回缓存60秒
-        if (urlString.includes('example')) {
-          return 60000; // 60秒缓存
-        }
-
-        // 例子：如果 URL 包含 'permanent', 返回负数，表示永久缓存
-        if (urlString.includes('permanent')) {
+        // 如果 URL 包含 '.js' 或 '.css'，使用永久缓存
+        if (urlString.endsWith('.js') || urlString.endsWith('.css')) {
           return -1; // 永久缓存
         }
 
-        // 其他情况不需要缓存
-        return false; // 或者 null，undefined，或 0
+        // 其他资源统一缓存60秒
+        return 60000; // 60秒缓存
       };
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
