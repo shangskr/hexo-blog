@@ -376,14 +376,14 @@
 
   
   <url>
-    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://hexo.shangskr.top/categories/hexo/</loc>
     <lastmod>2024-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hexo.shangskr.top/categories/hexo/</loc>
+    <loc>https://hexo.shangskr.top/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
