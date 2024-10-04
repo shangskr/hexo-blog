@@ -5,7 +5,7 @@ const INVALID_KEY = 'X-Swpp-Invalid';
 const STORAGE_TIMESTAMP = 'X-Swpp-Time';
 const UPDATE_JSON_URL = 'swpp/update.json';
 const UPDATE_CD = 600000;
-const matchCacheRule = (_url) => 120000;
+const matchCacheRule = (_url) => 240000;
 const normalizeUrl = (url) => {
                     if (url.endsWith('/index.html'))
                         return url.substring(0, url.length - 10);
